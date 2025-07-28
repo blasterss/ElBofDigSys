@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="mux_scheme">
+		<CBX_INST_ENTRY INSTANCE_NAME="|mux_scheme|lpm_counter2:inst7|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_pni.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|mux_scheme|lpm_mux0:inst15|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_m4e.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

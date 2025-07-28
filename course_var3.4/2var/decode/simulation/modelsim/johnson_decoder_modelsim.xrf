@@ -1,0 +1,12 @@
+vendor_name = ModelSim
+source_file = 1, D:/Student/6sem/ElBCS/dollars/churin_course/2var/decode/johnson_decoder.bdf
+source_file = 1, D:/Student/6sem/ElBCS/dollars/churin_course/2var/decode/db/johnson_decoder.cbx.xml
+design_name = johnson_decoder
+instance = comp, \q[3]~I , q[3], johnson_decoder, 1
+instance = comp, \q[4]~I , q[4], johnson_decoder, 1
+instance = comp, \q[2]~I , q[2], johnson_decoder, 1
+instance = comp, \q[0]~I , q[0], johnson_decoder, 1
+instance = comp, \z[2]~I , z[2], johnson_decoder, 1
+instance = comp, \z[1]~I , z[1], johnson_decoder, 1
+instance = comp, \z[0]~I , z[0], johnson_decoder, 1
+instance = comp, \q[1]~I , q[1], johnson_decoder, 1

@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Student\6sem\ElBCS\dollars\melikhov_course\interface\simulation\qsim
+vinterface
+Z1 !s100 D<2I:VEZoekGP=[IA8DeZ3
+Z2 I6lI6gYJKLG:Ihb<@=Shkz3
+Z3 V=VH[N4Xk]zVL@ZYoiXmj:1
+Z4 dD:\Student\6sem\ElBCS\dollars\samoylov_course\interface\simulation\qsim
+Z5 w1748454286
+Z6 8interface.vo
+Z7 Finterface.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|interface.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1748454287.295000
+Z12 !s107 interface.vo|
+!s101 -O0
+vinterface_vlg_check_tst
+!i10b 1
+Z13 !s100 RoCemJGVozR:hba5CkCRU2
+Z14 Ibzfc;a5;m@LCMc;F4C:VB3
+Z15 V2?bOfg3=^8MF8WlT=_FHJ1
+R4
+Z16 w1748454285
+Z17 8interface.vt
+Z18 Finterface.vt
+L0 67
+R8
+r1
+!s85 0
+31
+Z19 !s108 1748454287.389000
+Z20 !s107 interface.vt|
+Z21 !s90 -work|work|interface.vt|
+!s101 -O0
+R10
+vinterface_vlg_sample_tst
+!i10b 1
+Z22 !s100 :na_C[?>Uh8P_gR_BSkz>0
+Z23 IYOV4>CT`[@GN=_ihe`fme2
+Z24 V?P9gbgWA@d7hDZO:hmACA3
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vinterface_vlg_vec_tst
+!i10b 1
+!s100 @=c9ePSF[?Y[K7dc4o@>a2
+ICNhJcT;BcB>:4F[k:hBWY2
+Z25 VJoUc[T;zbCo^D`bgR@9MK1
+R4
+R16
+R17
+R18
+Z26 L0 466
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

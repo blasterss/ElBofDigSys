@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Student\6sem\ElBCS\dollars\samoylov_course\cnteprom\simulation\qsim
+vcnteprom
+Z1 !s100 F_Rm?>[>E[d>`XA=V_2i>2
+Z2 IS>6QnezghffMB_Df8<d?P3
+Z3 V^JfcYCziJ2`egC2PWf_Uk0
+Z4 dD:\Student\6sem\ElBCS\dollars\samoylov_course\cnteprom\simulation\qsim
+Z5 w1748242694
+Z6 8cnteprom.vo
+Z7 Fcnteprom.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|cnteprom.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1748242695.695000
+Z12 !s107 cnteprom.vo|
+!s101 -O0
+vcnteprom_vlg_check_tst
+!i10b 1
+Z13 !s100 `Zlc_40cXVgbKHPL338SL3
+Z14 I6z=ZSB3Q60NF5]S4DgU;>3
+Z15 V[XD3Mb`2HO^?MohA=AV^l0
+R4
+R5
+Z16 8cnteprom.vt
+Z17 Fcnteprom.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z18 !s108 1748242695.779000
+Z19 !s107 cnteprom.vt|
+Z20 !s90 -work|work|cnteprom.vt|
+!s101 -O0
+R10
+vcnteprom_vlg_sample_tst
+!i10b 1
+Z21 !s100 NS^a^XV1VHNOT]UU9RhOl2
+Z22 I6765KWR=a2Y>LADi:8nVJ1
+Z23 V1^HeGaHcPgnn3z<8Z]C6`2
+R4
+R5
+R16
+R17
+L0 29
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10
+vcnteprom_vlg_vec_tst
+!i10b 1
+!s100 ^j6;RS`<:KEiLQjAlZe^R2
+I8I3CQE3fD76KMD[lOgCJF2
+Z24 V2hgm^eYGaO?_EO@[j2H3b3
+R4
+R5
+R16
+R17
+Z25 L0 346
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10

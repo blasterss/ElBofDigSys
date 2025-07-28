@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="shift_reg">
+		<CBX_INST_ENTRY INSTANCE_NAME="|shift_reg|lpm_counter0:inst3|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_6ni.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|shift_reg|speed_loader:inst1|lpm_mux0:inst|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_23e.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

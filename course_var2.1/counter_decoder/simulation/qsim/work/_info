@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Student\6sem\ElBCS\dollars\rymar_course\counter_decoder\simulation\qsim
+vcounter_decoder
+Z1 !s100 3Q3Cc202aiAUjAe<]h1N20
+Z2 ISn?Hb7H:TlVlY>nGenMEB3
+Z3 VmEO?E@`ko:1=RkzWzAV>o3
+Z4 dD:\Student\6sem\ElBCS\dollars\rymar_course\counter_decoder\simulation\qsim
+Z5 w1748801589
+Z6 8counter_decoder.vo
+Z7 Fcounter_decoder.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|counter_decoder.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1748801590.188000
+Z12 !s107 counter_decoder.vo|
+!s101 -O0
+vcounter_decoder_vlg_check_tst
+!i10b 1
+Z13 !s100 P6PhfSna^5VnY0i4a32nU3
+Z14 IjE_cL_2AXK1HRo5H5Nfb<1
+Z15 Vjh3K<VckEkLGNOn;U?SVL1
+R4
+Z16 w1748801588
+Z17 8counter_decoder.vt
+Z18 Fcounter_decoder.vt
+L0 59
+R8
+r1
+!s85 0
+31
+Z19 !s108 1748801590.270000
+Z20 !s107 counter_decoder.vt|
+Z21 !s90 -work|work|counter_decoder.vt|
+!s101 -O0
+R10
+vcounter_decoder_vlg_sample_tst
+!i10b 1
+Z22 !s100 60zgNNfRinZM>5bn@5^II2
+Z23 I8LK6X7l32B^eNa_LEM2<L3
+Z24 V0cAzHdFZ@kPg5z@LUL?Gl3
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vcounter_decoder_vlg_vec_tst
+!i10b 1
+Z25 !s100 RzoZ<<bDL<W5QbUn^l1;U2
+Z26 I0__?F@4Xm6d8NMiDZRbQm1
+Z27 V;5zF<9<RG7=j_?11SXPaJ0
+R4
+R16
+R17
+R18
+Z28 L0 279
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

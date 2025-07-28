@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:/Student/6sem/ElBCS/$$$$$$/rubis_course/1var/speed_loader/simulation/qsim
+vspeed_loader
+Z1 !s100 RWYfJCMgI[4gKXC@SGiCQ3
+Z2 IY=KO3iI:BQkG]@<>BZNgc0
+Z3 V5CkEi5Ug`Xg:[6FOCeVl=1
+Z4 dD:\Student\6sem\ElBCS\dollars\rubis_course\1var\speed_loader\simulation\qsim
+Z5 w1746490141
+Z6 8speed_loader.vo
+Z7 Fspeed_loader.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|speed_loader.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1746490142.504000
+Z12 !s107 speed_loader.vo|
+!s101 -O0
+vspeed_loader_vlg_check_tst
+!i10b 1
+Z13 !s100 b^[=gbEEie58iVnBKBF0n3
+Z14 I=6fYLMF>G@=J8k]_l7>b61
+Z15 V=kGB?:XU<glniVoW3;be>1
+R4
+Z16 w1746490140
+Z17 8speed_loader.vt
+Z18 Fspeed_loader.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z19 !s108 1746490142.581000
+Z20 !s107 speed_loader.vt|
+Z21 !s90 -work|work|speed_loader.vt|
+!s101 -O0
+R10
+vspeed_loader_vlg_sample_tst
+!i10b 1
+Z22 !s100 4J;N=Z[2:z0_n0SZSYmoo3
+Z23 I;6A5A4EL6FG`=g7eIJ]hz0
+Z24 VeN:1JeW4R<a47:dnPcXmT2
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vspeed_loader_vlg_vec_tst
+!i10b 1
+!s100 78dR5V7<0Zj?j[eXdd`4M3
+IYLAhA5P:eYDeRc4iz?9243
+Z25 VGheaj5VzUSf:=1YfTgW2c2
+R4
+R16
+R17
+R18
+Z26 L0 158
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

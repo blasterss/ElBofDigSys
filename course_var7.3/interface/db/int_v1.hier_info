@@ -1,0 +1,97 @@
+|int_v1
+SEL <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => inst5.IN0
+A[1] => inst.IN2
+A[2] => inst.IN1
+A[3] => inst.IN3
+A[4] => inst.IN5
+A[5] => inst.IN4
+A[6] => inst.IN6
+A[7] => inst6.IN0
+Read <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+nIOW => inst2.ACLR
+nIOW => inst9.IN0
+nIOR => inst10.IN0
+cs[0] <= inst14.DB_MAX_OUTPUT_PORT_TYPE
+cs[1] <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+DB[0] => inst12.IN0
+DB[0] => inst14.IN1
+DB[1] => inst13.IN1
+DB[1] => inst15.IN0
+DB[2] => ~NO_FANOUT~
+DB[3] => ~NO_FANOUT~
+DB[4] => ~NO_FANOUT~
+DB[5] => ~NO_FANOUT~
+DB[6] => ~NO_FANOUT~
+DB[7] => ~NO_FANOUT~
+Result[0] <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+Result[1] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+Result[2] <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+Result[3] <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+C => scheme2:inst1.Clock
+R => scheme2:inst1.Reset
+
+
+|int_v1|scheme2:inst1
+z[0] <= johnson_decoder:inst1.z[0]
+z[1] <= johnson_decoder:inst1.z[1]
+z[2] <= johnson_decoder:inst1.z[2]
+z[3] <= johnson_decoder:inst1.z[3]
+Clock => johnson_counter:inst.C
+Clock => inst11.CLK
+Start => inst11.IN1
+Stop => inst11.IN0
+Reset => johnson_counter:inst.RESET
+
+
+|int_v1|scheme2:inst1|johnson_decoder:inst1
+z[0] <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+z[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+z[2] <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+z[3] <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+q[0] => inst5.IN0
+q[1] => ~NO_FANOUT~
+q[2] => inst.IN0
+q[3] => inst1.IN0
+q[4] => ~NO_FANOUT~
+q[5] => inst2.IN0
+q[6] => ~NO_FANOUT~
+q[7] => inst5.IN1
+q[8] => ~NO_FANOUT~
+q[9] => inst3.IN0
+
+
+|int_v1|scheme2:inst1|johnson_counter:inst
+q[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+RESET => inst22.IN0
+C => inst6.CLK
+C => inst11.CLK
+C => inst.CLK
+C => inst3.CLK
+C => inst4.CLK
+C => inst5.CLK
+C => inst10.CLK
+C => inst9.CLK
+C => inst8.CLK
+C => inst7.CLK
+ENA => inst6.ENA
+ENA => inst11.ENA
+ENA => inst.ENA
+ENA => inst3.ENA
+ENA => inst4.ENA
+ENA => inst5.ENA
+ENA => inst10.ENA
+ENA => inst9.ENA
+ENA => inst8.ENA
+ENA => inst7.ENA
+
+

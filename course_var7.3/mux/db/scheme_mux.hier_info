@@ -1,0 +1,353 @@
+|scheme_mux
+Result <= lpm_mux1:inst2.result
+Ready <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+Reset => inst4.IN0
+Reset => lpm_counter0:inst3.aclr
+SetCLOCK => inst11.IN1
+Clock => speed_loader:inst1.Clock
+Addr[0] => speed_loader:inst1.Addr[0]
+Addr[1] => speed_loader:inst1.Addr[1]
+Start => inst9.IN0
+SetDATA => inst10.IN1
+In[0] => data_loader:inst.Input[0]
+In[1] => data_loader:inst.Input[1]
+In[2] => data_loader:inst.Input[2]
+In[3] => data_loader:inst.Input[3]
+In[4] => data_loader:inst.Input[4]
+In[5] => data_loader:inst.Input[5]
+In[6] => data_loader:inst.Input[6]
+In[7] => data_loader:inst.Input[7]
+In[8] => data_loader:inst.Input[8]
+In[9] => data_loader:inst.Input[9]
+In[10] => data_loader:inst.Input[10]
+In[11] => data_loader:inst.Input[11]
+
+
+|scheme_mux|lpm_mux1:inst2
+data0 => LPM_MUX:LPM_MUX_component.DATA[0][0]
+data1 => LPM_MUX:LPM_MUX_component.DATA[1][0]
+data10 => LPM_MUX:LPM_MUX_component.DATA[10][0]
+data11 => LPM_MUX:LPM_MUX_component.DATA[11][0]
+data12 => LPM_MUX:LPM_MUX_component.DATA[12][0]
+data13 => LPM_MUX:LPM_MUX_component.DATA[13][0]
+data14 => LPM_MUX:LPM_MUX_component.DATA[14][0]
+data15 => LPM_MUX:LPM_MUX_component.DATA[15][0]
+data2 => LPM_MUX:LPM_MUX_component.DATA[2][0]
+data3 => LPM_MUX:LPM_MUX_component.DATA[3][0]
+data4 => LPM_MUX:LPM_MUX_component.DATA[4][0]
+data5 => LPM_MUX:LPM_MUX_component.DATA[5][0]
+data6 => LPM_MUX:LPM_MUX_component.DATA[6][0]
+data7 => LPM_MUX:LPM_MUX_component.DATA[7][0]
+data8 => LPM_MUX:LPM_MUX_component.DATA[8][0]
+data9 => LPM_MUX:LPM_MUX_component.DATA[9][0]
+sel[0] => LPM_MUX:LPM_MUX_component.SEL[0]
+sel[1] => LPM_MUX:LPM_MUX_component.SEL[1]
+sel[2] => LPM_MUX:LPM_MUX_component.SEL[2]
+sel[3] => LPM_MUX:LPM_MUX_component.SEL[3]
+result <= LPM_MUX:LPM_MUX_component.RESULT[0]
+
+
+|scheme_mux|lpm_mux1:inst2|LPM_MUX:LPM_MUX_component
+data[0][0] => mux_o4e:auto_generated.data[0]
+data[1][0] => mux_o4e:auto_generated.data[1]
+data[2][0] => mux_o4e:auto_generated.data[2]
+data[3][0] => mux_o4e:auto_generated.data[3]
+data[4][0] => mux_o4e:auto_generated.data[4]
+data[5][0] => mux_o4e:auto_generated.data[5]
+data[6][0] => mux_o4e:auto_generated.data[6]
+data[7][0] => mux_o4e:auto_generated.data[7]
+data[8][0] => mux_o4e:auto_generated.data[8]
+data[9][0] => mux_o4e:auto_generated.data[9]
+data[10][0] => mux_o4e:auto_generated.data[10]
+data[11][0] => mux_o4e:auto_generated.data[11]
+data[12][0] => mux_o4e:auto_generated.data[12]
+data[13][0] => mux_o4e:auto_generated.data[13]
+data[14][0] => mux_o4e:auto_generated.data[14]
+data[15][0] => mux_o4e:auto_generated.data[15]
+sel[0] => mux_o4e:auto_generated.sel[0]
+sel[1] => mux_o4e:auto_generated.sel[1]
+sel[2] => mux_o4e:auto_generated.sel[2]
+sel[3] => mux_o4e:auto_generated.sel[3]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= mux_o4e:auto_generated.result[0]
+
+
+|scheme_mux|lpm_mux1:inst2|LPM_MUX:LPM_MUX_component|mux_o4e:auto_generated
+data[0] => _.IN0
+data[0] => _.IN0
+data[0] => _.IN0
+data[0] => _.IN0
+data[1] => _.IN0
+data[1] => _.IN0
+data[2] => _.IN1
+data[2] => _.IN1
+data[2] => _.IN1
+data[2] => _.IN1
+data[3] => _.IN0
+data[3] => _.IN0
+data[4] => _.IN0
+data[4] => _.IN0
+data[5] => _.IN0
+data[6] => _.IN1
+data[6] => _.IN1
+data[7] => _.IN0
+data[8] => _.IN0
+data[8] => _.IN0
+data[8] => _.IN0
+data[8] => _.IN0
+data[9] => _.IN0
+data[9] => _.IN0
+data[10] => _.IN1
+data[10] => _.IN1
+data[10] => _.IN1
+data[10] => _.IN1
+data[11] => _.IN0
+data[11] => _.IN0
+data[12] => _.IN0
+data[12] => _.IN0
+data[13] => _.IN0
+data[14] => _.IN1
+data[14] => _.IN1
+data[15] => _.IN0
+result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => _.IN1
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN1
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN1
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN1
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN1
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN1
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[2] => _.IN1
+sel[2] => _.IN0
+sel[2] => _.IN0
+sel[2] => _.IN0
+sel[2] => _.IN0
+sel[2] => _.IN0
+sel[3] => _.IN0
+sel[3] => _.IN0
+sel[3] => _.IN0
+sel[3] => _.IN0
+
+
+|scheme_mux|data_loader:inst
+Data[0] <= <GND>
+Data[1] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Data[2] <= inst32.DB_MAX_OUTPUT_PORT_TYPE
+Data[3] <= inst34.DB_MAX_OUTPUT_PORT_TYPE
+Data[4] <= inst36.DB_MAX_OUTPUT_PORT_TYPE
+Data[5] <= inst33.DB_MAX_OUTPUT_PORT_TYPE
+Data[6] <= inst35.DB_MAX_OUTPUT_PORT_TYPE
+Data[7] <= inst37.DB_MAX_OUTPUT_PORT_TYPE
+Data[8] <= inst38.DB_MAX_OUTPUT_PORT_TYPE
+Data[9] <= inst39.DB_MAX_OUTPUT_PORT_TYPE
+Data[10] <= inst40.DB_MAX_OUTPUT_PORT_TYPE
+Data[11] <= inst41.DB_MAX_OUTPUT_PORT_TYPE
+Data[12] <= inst42.DB_MAX_OUTPUT_PORT_TYPE
+Data[13] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
+Data[14] <= <VCC>
+Reset => inst.ACLR
+Reset => inst32.ACLR
+Reset => inst34.ACLR
+Reset => inst36.ACLR
+Reset => inst33.ACLR
+Reset => inst35.ACLR
+Reset => inst37.ACLR
+Reset => inst38.ACLR
+Reset => inst39.ACLR
+Reset => inst40.ACLR
+Reset => inst41.ACLR
+Reset => inst42.ACLR
+Input[0] => inst.DATAIN
+Input[1] => inst32.DATAIN
+Input[2] => inst34.DATAIN
+Input[3] => inst36.DATAIN
+Input[4] => inst33.DATAIN
+Input[5] => inst35.DATAIN
+Input[6] => inst37.DATAIN
+Input[7] => inst38.DATAIN
+Input[8] => inst39.DATAIN
+Input[9] => inst40.DATAIN
+Input[10] => inst41.DATAIN
+Input[11] => inst42.DATAIN
+Enable => inst.LATCH_ENABLE
+Enable => inst32.LATCH_ENABLE
+Enable => inst34.LATCH_ENABLE
+Enable => inst36.LATCH_ENABLE
+Enable => inst33.LATCH_ENABLE
+Enable => inst35.LATCH_ENABLE
+Enable => inst37.LATCH_ENABLE
+Enable => inst38.LATCH_ENABLE
+Enable => inst39.LATCH_ENABLE
+Enable => inst40.LATCH_ENABLE
+Enable => inst41.LATCH_ENABLE
+Enable => inst42.LATCH_ENABLE
+
+
+|scheme_mux|lpm_counter0:inst3
+aclr => lpm_counter:LPM_COUNTER_component.aclr
+clk_en => lpm_counter:LPM_COUNTER_component.clk_en
+clock => lpm_counter:LPM_COUNTER_component.clock
+q[0] <= lpm_counter:LPM_COUNTER_component.q[0]
+q[1] <= lpm_counter:LPM_COUNTER_component.q[1]
+q[2] <= lpm_counter:LPM_COUNTER_component.q[2]
+q[3] <= lpm_counter:LPM_COUNTER_component.q[3]
+
+
+|scheme_mux|lpm_counter0:inst3|lpm_counter:LPM_COUNTER_component
+clock => cntr_6ni:auto_generated.clock
+clk_en => cntr_6ni:auto_generated.clk_en
+cnt_en => ~NO_FANOUT~
+updown => ~NO_FANOUT~
+aclr => cntr_6ni:auto_generated.aclr
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+sconst => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+data[0] => ~NO_FANOUT~
+data[1] => ~NO_FANOUT~
+data[2] => ~NO_FANOUT~
+data[3] => ~NO_FANOUT~
+cin => ~NO_FANOUT~
+q[0] <= cntr_6ni:auto_generated.q[0]
+q[1] <= cntr_6ni:auto_generated.q[1]
+q[2] <= cntr_6ni:auto_generated.q[2]
+q[3] <= cntr_6ni:auto_generated.q[3]
+cout <= <GND>
+eq[0] <= <GND>
+eq[1] <= <GND>
+eq[2] <= <GND>
+eq[3] <= <GND>
+eq[4] <= <GND>
+eq[5] <= <GND>
+eq[6] <= <GND>
+eq[7] <= <GND>
+eq[8] <= <GND>
+eq[9] <= <GND>
+eq[10] <= <GND>
+eq[11] <= <GND>
+eq[12] <= <GND>
+eq[13] <= <GND>
+eq[14] <= <GND>
+eq[15] <= <GND>
+
+
+|scheme_mux|lpm_counter0:inst3|lpm_counter:LPM_COUNTER_component|cntr_6ni:auto_generated
+aclr => counter_reg_bit1a[3].ACLR
+aclr => counter_reg_bit1a[2].ACLR
+aclr => counter_reg_bit1a[1].ACLR
+aclr => counter_reg_bit1a[0].ACLR
+clk_en => counter_reg_bit1a[3].IN0
+clock => counter_reg_bit1a[3].CLK
+clock => counter_reg_bit1a[2].CLK
+clock => counter_reg_bit1a[1].CLK
+clock => counter_reg_bit1a[0].CLK
+q[0] <= counter_reg_bit1a[0].REGOUT
+q[1] <= counter_reg_bit1a[1].REGOUT
+q[2] <= counter_reg_bit1a[2].REGOUT
+q[3] <= counter_reg_bit1a[3].REGOUT
+
+
+|scheme_mux|speed_loader:inst1
+ModClock <= lpm_mux0:inst.result
+Reset => inst5.ACLR
+Reset => inst3.ACLR
+Reset => inst4.ACLR
+Reset => inst7.ACLR
+Clock => inst2.IN0
+Clock => lpm_mux0:inst.data0
+Addr[0] => inst4.DATAIN
+Addr[1] => inst7.DATAIN
+Enable => inst4.LATCH_ENABLE
+Enable => inst7.LATCH_ENABLE
+
+
+|scheme_mux|speed_loader:inst1|lpm_mux0:inst
+data0 => LPM_MUX:LPM_MUX_component.DATA[0][0]
+data1 => LPM_MUX:LPM_MUX_component.DATA[1][0]
+data2 => LPM_MUX:LPM_MUX_component.DATA[2][0]
+sel[0] => LPM_MUX:LPM_MUX_component.SEL[0]
+sel[1] => LPM_MUX:LPM_MUX_component.SEL[1]
+result <= LPM_MUX:LPM_MUX_component.RESULT[0]
+
+
+|scheme_mux|speed_loader:inst1|lpm_mux0:inst|LPM_MUX:LPM_MUX_component
+data[0][0] => mux_23e:auto_generated.data[0]
+data[1][0] => mux_23e:auto_generated.data[1]
+data[2][0] => mux_23e:auto_generated.data[2]
+sel[0] => mux_23e:auto_generated.sel[0]
+sel[1] => mux_23e:auto_generated.sel[1]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= mux_23e:auto_generated.result[0]
+
+
+|scheme_mux|speed_loader:inst1|lpm_mux0:inst|LPM_MUX:LPM_MUX_component|mux_23e:auto_generated
+data[0] => data0_wire[0].IN0
+data[1] => data1_wire[0].IN0
+data[2] => data2_wire[0].IN0
+result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => data0_wire[0].IN0
+sel[0] => data1_wire[0].IN1
+sel[1] => data2_wire[0].IN1
+sel[1] => _.IN0
+
+

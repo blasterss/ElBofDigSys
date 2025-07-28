@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="period_cnt">
+		<CBX_INST_ENTRY INSTANCE_NAME="|period_cnt|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_rkh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|period_cnt|lpm_decode3:inst12|lpm_decode:LPM_DECODE_component" CBX_FILE_NAME="decode_3af.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

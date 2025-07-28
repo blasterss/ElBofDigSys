@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Student\6sem\ElBCS\course\scheme1\simulation\qsim
+vscheme1
+Z1 IGFJR43N_[0gXZh_PKaRQW1
+Z2 VIEKU=l[Ka^1G5c8cO8d;d0
+Z3 dD:\Student\6sem\ElBCS\dollars\churin_course\scheme1\simulation\qsim
+Z4 w1749158385
+Z5 8scheme1.vo
+Z6 Fscheme1.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|scheme1.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 Pa<=E=I:n?mR;H:KzN;6Y2
+!s85 0
+Z11 !s108 1749158385.853000
+Z12 !s107 scheme1.vo|
+!s101 -O0
+vscheme1_vlg_check_tst
+!i10b 1
+Z13 !s100 6_e>DeK21@noCanj487Db1
+Z14 IM]i<k6lOz5fXjFhHTVdLO3
+Z15 V9N48EG]`FbYjX`nEoCn6:1
+R3
+Z16 w1749158384
+Z17 8scheme1.vt
+Z18 Fscheme1.vt
+L0 63
+R7
+r1
+!s85 0
+31
+Z19 !s108 1749158385.943000
+Z20 !s107 scheme1.vt|
+Z21 !s90 -work|work|scheme1.vt|
+!s101 -O0
+R9
+vscheme1_vlg_sample_tst
+!i10b 1
+Z22 !s100 9_0oW:48z0:1i5M2kkFkm0
+Z23 IAS3i^8Sb087D6CH0gLkKe2
+Z24 V`S88an_F5Q9g02gDR7VbM2
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vscheme1_vlg_vec_tst
+!i10b 1
+Z25 !s100 LmD<D9CSHK4I_UN6=PPA72
+Z26 Ic4LgTgF`FhQ_L[Z>HHEg10
+Z27 V1cbX5S<gmK]ImGR0QY8=J2
+R3
+R16
+R17
+R18
+Z28 L0 193
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

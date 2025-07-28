@@ -1,0 +1,77 @@
+|scheme2
+z[0] <= johnson_decoder:inst2.z[0]
+z[1] <= johnson_decoder:inst2.z[1]
+z[2] <= johnson_decoder:inst2.z[2]
+Clock => johnson_counter:inst3.C
+Clock => inst11.CLK
+Start => inst11.IN1
+Stop => inst11.IN0
+Reset => johnson_counter:inst3.RESET
+
+
+|scheme2|johnson_decoder:inst2
+z[0] <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+z[1] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+z[2] <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+q[0] => inst1.IN1
+q[1] => ~NO_FANOUT~
+q[2] => inst.IN0
+q[2] => inst1.IN0
+q[3] => inst2.IN1
+q[4] => inst4.IN1
+q[4] => inst2.IN0
+
+
+|scheme2|johnson_counter:inst3
+q[0] <= LPM_DFF:inst1.q[0]
+q[1] <= LPM_DFF:inst1.q[1]
+q[2] <= LPM_DFF:inst1.q[2]
+q[3] <= LPM_DFF:inst1.q[3]
+q[4] <= LPM_DFF:inst1.q[4]
+RESET => LPM_DFF:inst1.aclr
+C => LPM_DFF:inst1.clock
+ENA => LPM_DFF:inst1.enable
+ENA => LPM_DFF:inst1.shiften
+
+
+|scheme2|johnson_counter:inst3|LPM_DFF:inst1
+data[0] => _.IN1
+data[1] => _.IN1
+data[2] => _.IN1
+data[3] => _.IN1
+data[4] => _.IN1
+clock => dffs[4].CLK
+clock => dffs[3].CLK
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[4].ENA
+enable => dffs[3].ENA
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+shiftin => _.IN1
+shiften => _.IN0
+shiften => _.IN0
+shiften => _.IN0
+shiften => _.IN0
+shiften => _.IN0
+shiften => _.IN0
+aclr => dffs[4].IN0
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+sconst => ~NO_FANOUT~
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= dffs[4].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
+
+

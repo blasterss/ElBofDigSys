@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Student\6sem\ElBCS\dollars\samoylov_course\decoder\simulation\qsim
+vdecoder
+Z1 !s100 NG8k:2>2VlVj1Qa`Skc=71
+Z2 I5N>ABfMNJD;8cUZ5Kl=V]1
+Z3 V9fVK[bY8D]gNmRAaaO?2k3
+Z4 dD:\Student\6sem\ElBCS\dollars\samoylov_course\decoder\simulation\qsim
+Z5 w1748243254
+Z6 8decoder.vo
+Z7 Fdecoder.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|decoder.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1748243255.115000
+Z12 !s107 decoder.vo|
+!s101 -O0
+vdecoder_vlg_check_tst
+!i10b 1
+Z13 !s100 dN012nhaMYg2;331SS3RQ3
+Z14 IWh1IhbCJjbIUeZ8V;Pmd32
+Z15 V2=nozLYUl[FDmMb=QCkB@3
+R4
+Z16 w1748243253
+Z17 8decoder.vt
+Z18 Fdecoder.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z19 !s108 1748243255.206000
+Z20 !s107 decoder.vt|
+Z21 !s90 -work|work|decoder.vt|
+!s101 -O0
+R10
+vdecoder_vlg_sample_tst
+!i10b 1
+Z22 !s100 lT]o7UB:B]komm^Vn1gIF3
+Z23 I@O<3NG[<3[oRCCodPB9>W2
+Z24 VO1In3?`f8Qde]H85D0NWk2
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vdecoder_vlg_vec_tst
+!i10b 1
+!s100 z5dzO3=eaE[oPPoLcV@1E3
+I]nfMeSUHAn`m;Ya3bc6^R0
+Z25 V9_SfU7d^<;VG3[I?m[kb82
+R4
+R16
+R17
+R18
+Z26 L0 346
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

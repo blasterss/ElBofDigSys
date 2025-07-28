@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="prom_mux">
+		<CBX_INST_ENTRY INSTANCE_NAME="|prom_mux|LPM_ROM:inst|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_n201.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|prom_mux|lpm_mux0:inst3|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_k4e.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

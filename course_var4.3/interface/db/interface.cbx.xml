@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="interface">
+		<CBX_INST_ENTRY INSTANCE_NAME="|interface|decoder:inst|lpm_counter0:inst|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_r5j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|interface|decoder:inst|lpm_decode0:inst2|lpm_decode:LPM_DECODE_component" CBX_FILE_NAME="decode_b8f.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|interface|lpm_counter1:inst3|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_qkh.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

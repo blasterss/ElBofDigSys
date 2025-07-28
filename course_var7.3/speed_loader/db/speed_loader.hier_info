@@ -1,0 +1,46 @@
+|speed_loader
+ModClock <= lpm_mux0:inst.result
+Reset => inst5.ACLR
+Reset => inst3.ACLR
+Reset => inst4.ACLR
+Reset => inst7.ACLR
+Clock => inst2.IN0
+Clock => lpm_mux0:inst.data0
+Addr[0] => inst4.DATAIN
+Addr[1] => inst7.DATAIN
+Enable => inst4.LATCH_ENABLE
+Enable => inst7.LATCH_ENABLE
+
+
+|speed_loader|lpm_mux0:inst
+data0 => LPM_MUX:LPM_MUX_component.DATA[0][0]
+data1 => LPM_MUX:LPM_MUX_component.DATA[1][0]
+data2 => LPM_MUX:LPM_MUX_component.DATA[2][0]
+sel[0] => LPM_MUX:LPM_MUX_component.SEL[0]
+sel[1] => LPM_MUX:LPM_MUX_component.SEL[1]
+result <= LPM_MUX:LPM_MUX_component.RESULT[0]
+
+
+|speed_loader|lpm_mux0:inst|LPM_MUX:LPM_MUX_component
+data[0][0] => mux_23e:auto_generated.data[0]
+data[1][0] => mux_23e:auto_generated.data[1]
+data[2][0] => mux_23e:auto_generated.data[2]
+sel[0] => mux_23e:auto_generated.sel[0]
+sel[1] => mux_23e:auto_generated.sel[1]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= mux_23e:auto_generated.result[0]
+
+
+|speed_loader|lpm_mux0:inst|LPM_MUX:LPM_MUX_component|mux_23e:auto_generated
+data[0] => data0_wire[0].IN0
+data[1] => data1_wire[0].IN0
+data[2] => data2_wire[0].IN0
+result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => data0_wire[0].IN0
+sel[0] => data1_wire[0].IN1
+sel[1] => data2_wire[0].IN1
+sel[1] => _.IN0
+
+

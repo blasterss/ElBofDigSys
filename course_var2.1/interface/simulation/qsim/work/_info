@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Student\6sem\ElBCS\gitrep\ElBofDigSys\courseWork\stuff\interface\simulation\qsim
+vinterface
+Z1 I]DNlP<kbYha<bb[?ZD7lT2
+Z2 VVDf?>Zo>A3_lXe6_d_bRK0
+Z3 dD:\Student\6sem\ElBCS\dollars\rymar_course\interface\simulation\qsim
+Z4 w1748861577
+Z5 8interface.vo
+Z6 Finterface.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|interface.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 OHJRkFhVEcVBd8W72ON;]2
+!s85 0
+Z11 !s108 1748861578.694000
+Z12 !s107 interface.vo|
+!s101 -O0
+vinterface_vlg_check_tst
+!i10b 1
+!s100 >j@K>b4kS`0g?c>UVK?Eo3
+IU0EMX3YdB3CjMoAZ<o2[D0
+Z13 VgP08>5kl90`mfQW>]g87K2
+R3
+Z14 w1748861576
+Z15 8interface.vt
+Z16 Finterface.vt
+L0 67
+R7
+r1
+!s85 0
+31
+Z17 !s108 1748861578.790000
+Z18 !s107 interface.vt|
+Z19 !s90 -work|work|interface.vt|
+!s101 -O0
+R9
+vinterface_vlg_sample_tst
+!i10b 1
+Z20 !s100 R8Rk3IHZN2W4V`P@oZY=c3
+Z21 IoJO13SUIbdSb<B_bP5Y9:3
+Z22 Vf[P3gJoK843ofO`VG3<c52
+R3
+R14
+R15
+R16
+L0 29
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R9
+vinterface_vlg_vec_tst
+!i10b 1
+!s100 _L1JR<MKjBZJ_j]Mo<W<U0
+IM<]L`AkI=E5Z`@L15IEdR2
+Z23 VJoUc[T;zbCo^D`bgR@9MK1
+R3
+R14
+R15
+R16
+Z24 L0 395
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R9

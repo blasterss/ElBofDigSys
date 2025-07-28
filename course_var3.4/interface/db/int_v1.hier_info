@@ -1,0 +1,141 @@
+|int_v1
+SEL <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => inst5.IN0
+A[1] => inst.IN2
+A[2] => inst6.IN0
+A[3] => inst.IN3
+A[4] => inst.IN5
+A[5] => inst.IN4
+A[6] => inst.IN6
+A[7] => inst7.IN0
+Read <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+nIOW => inst2.ACLR
+nIOW => inst9.IN0
+nIOR => inst10.IN0
+Result[0] <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+Result[1] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+Result[2] <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+Start => inst11.IN2
+Stop => inst8.IN2
+C => scheme1:inst1.Clock
+R => scheme1:inst1.reset
+
+
+|int_v1|scheme1:inst1
+z[0] <= logic_chain:inst.z[0]
+z[1] <= logic_chain:inst.z[1]
+z[2] <= logic_chain:inst.z[2]
+Clock => shift_rg:inst2.C
+Clock => inst11.CLK
+Start => inst11.IN1
+Stop => inst11.IN0
+reset => shift_rg:inst2.RESET
+
+
+|int_v1|scheme1:inst1|logic_chain:inst
+z[0] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+z[1] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+z[2] <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+q[0] => inst.IN0
+q[0] => inst2.IN0
+q[1] => inst2.IN2
+q[2] => inst2.IN1
+q[3] => inst2.IN3
+q[4] => ~NO_FANOUT~
+q[5] => ~NO_FANOUT~
+q[6] => ~NO_FANOUT~
+q[7] => ~NO_FANOUT~
+q[8] => inst1.IN1
+q[8] => inst.IN1
+q[9] => inst1.IN0
+q[9] => inst.IN2
+
+
+|int_v1|scheme1:inst1|shift_rg:inst2
+q[0] <= LPM_DFF:inst2.q[0]
+q[1] <= LPM_DFF:inst2.q[1]
+q[2] <= LPM_DFF:inst2.q[2]
+q[3] <= LPM_DFF:inst2.q[3]
+q[4] <= LPM_DFF:inst2.q[4]
+q[5] <= LPM_DFF:inst2.q[5]
+q[6] <= LPM_DFF:inst2.q[6]
+q[7] <= LPM_DFF:inst2.q[7]
+q[8] <= LPM_DFF:inst2.q[8]
+q[9] <= LPM_DFF:inst2.q[9]
+RESET => LPM_DFF:inst2.aclr
+C => LPM_DFF:inst2.clock
+ENA => LPM_DFF:inst2.enable
+ENA => LPM_DFF:inst2.shiften
+
+
+|int_v1|scheme1:inst1|shift_rg:inst2|LPM_DFF:inst2
+data[0] => _.IN1
+data[1] => _.IN1
+data[2] => _.IN1
+data[3] => _.IN1
+data[4] => _.IN1
+data[5] => _.IN1
+data[6] => _.IN1
+data[7] => _.IN1
+data[8] => _.IN1
+data[9] => _.IN1
+clock => dffs[9].CLK
+clock => dffs[8].CLK
+clock => dffs[7].CLK
+clock => dffs[6].CLK
+clock => dffs[5].CLK
+clock => dffs[4].CLK
+clock => dffs[3].CLK
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[9].ENA
+enable => dffs[8].ENA
+enable => dffs[7].ENA
+enable => dffs[6].ENA
+enable => dffs[5].ENA
+enable => dffs[4].ENA
+enable => dffs[3].ENA
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+shiftin => _.IN1
+shiften => _.IN0
+shiften => _.IN0
+shiften => _.IN0
+shiften => _.IN0
+shiften => _.IN0
+shiften => _.IN0
+shiften => _.IN0
+shiften => _.IN0
+shiften => _.IN0
+shiften => _.IN0
+shiften => _.IN0
+aclr => dffs[9].IN0
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+sset => _.IN0
+sconst => ~NO_FANOUT~
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= dffs[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= dffs[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= dffs[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= dffs[7].DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= dffs[8].DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= dffs[9].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
+
+

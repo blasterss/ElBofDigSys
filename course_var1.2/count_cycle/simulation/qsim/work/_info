@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Student\6sem\ElBCS\dollars\melikhov_course\count_cycle\simulation\qsim
+vcount_cycle
+Z1 IB:5[jAnY@D2hbP59;P`D00
+Z2 Vd5;O`J0=0]1V8J5VU5O840
+Z3 dD:\Student\6sem\ElBCS\dollars\melikhov_course\count_cycle\simulation\qsim
+Z4 w1747070925
+Z5 8count_cycle.vo
+Z6 Fcount_cycle.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+!i10b 1
+Z9 !s100 obcXc7E_M3KlSd]M6L=7a2
+!s85 0
+Z10 !s108 1747070925.967000
+Z11 !s107 count_cycle.vo|
+Z12 !s90 -work|work|count_cycle.vo|
+!s101 -O0
+vcount_cycle_vlg_check_tst
+!i10b 1
+!s100 ZFLSV^[k6lQWnQJNQ[RG32
+Ie1cjo2T<Y`1MLR=LJi=3X0
+VV7WIkR^dIPX91VaWSgnnN1
+R3
+Z13 w1747070924
+Z14 8count_cycle.vt
+Z15 Fcount_cycle.vt
+L0 61
+R7
+r1
+!s85 0
+31
+Z16 !s108 1747070926.060000
+Z17 !s107 count_cycle.vt|
+Z18 !s90 -work|work|count_cycle.vt|
+!s101 -O0
+R8
+vcount_cycle_vlg_sample_tst
+!i10b 1
+!s100 b@:=AjdL=8o;ePCW@;`G82
+Id<NRhXPGFSV`X;dXho:Oe1
+VlZlFUob9a?`[K35j9fZOM2
+R3
+R13
+R14
+R15
+L0 29
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8
+vcount_cycle_vlg_vec_tst
+!i10b 1
+!s100 HcljO5E<f;eLLdTNlA6h]2
+I50PT<7cYE7?LGDlFhl9mR1
+VCAC0ei2QIH;KNjgJQV:QP2
+R3
+R13
+R14
+R15
+L0 254
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8

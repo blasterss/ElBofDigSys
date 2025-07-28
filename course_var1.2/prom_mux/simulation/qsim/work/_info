@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Student\6sem\ElBCS\dollars\melikhov_course\prom_mux\simulation\qsim
+vprom_mux
+Z1 I]X2g_hLXB@c8=ej_PlaGK1
+Z2 VW4GH7Fn^g[ISE?XjThY_72
+Z3 dD:\Student\6sem\ElBCS\dollars\melikhov_course\prom_mux\simulation\qsim
+Z4 w1748468918
+Z5 8prom_mux.vo
+Z6 Fprom_mux.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|prom_mux.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 PT59e1OBXOT9h_ZnDBAZm0
+!s85 0
+Z11 !s108 1748468919.409000
+Z12 !s107 prom_mux.vo|
+!s101 -O0
+vprom_mux_vlg_check_tst
+!i10b 1
+Z13 !s100 F?lm2X1d3NNgT^ZNO3Vke0
+Z14 Ih6UHO@fa;8h=3n>efAb:m3
+Z15 VH3G@h_26lQnZ758X]<8AR3
+R3
+Z16 w1748468917
+Z17 8prom_mux.vt
+Z18 Fprom_mux.vt
+L0 61
+R7
+r1
+!s85 0
+31
+Z19 !s108 1748468919.500000
+Z20 !s107 prom_mux.vt|
+Z21 !s90 -work|work|prom_mux.vt|
+!s101 -O0
+R9
+vprom_mux_vlg_sample_tst
+!i10b 1
+Z22 !s100 Vjza3kE5AYWzARZJP_dn51
+Z23 I:HPNm<_;^_Dbil9TmO7L>0
+Z24 VeCGQ<`L1<Q6;eaH>KKcU31
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vprom_mux_vlg_vec_tst
+!i10b 1
+Z25 !s100 ;3=kKl=79<g^PRZi6>SMU3
+Z26 IeZ7l9d]>OAlol3>4<g2P_3
+Z27 V9B3lH6ozX6]lejQIaNF3]0
+R3
+R16
+R17
+R18
+Z28 L0 156
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

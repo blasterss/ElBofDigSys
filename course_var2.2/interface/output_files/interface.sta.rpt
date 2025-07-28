@@ -1,0 +1,1446 @@
+TimeQuest Timing Analyzer report for interface
+Fri May 30 16:58:02 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'Clock'
+ 12. Slow Model Setup: 'nIOW'
+ 13. Slow Model Hold: 'nIOW'
+ 14. Slow Model Hold: 'Clock'
+ 15. Slow Model Recovery: 'nIOW'
+ 16. Slow Model Recovery: 'nIOR'
+ 17. Slow Model Removal: 'nIOR'
+ 18. Slow Model Removal: 'nIOW'
+ 19. Slow Model Minimum Pulse Width: 'nIOW'
+ 20. Slow Model Minimum Pulse Width: 'Clock'
+ 21. Slow Model Minimum Pulse Width: 'nIOR'
+ 22. Setup Times
+ 23. Hold Times
+ 24. Clock to Output Times
+ 25. Minimum Clock to Output Times
+ 26. Propagation Delay
+ 27. Minimum Propagation Delay
+ 28. Fast Model Setup Summary
+ 29. Fast Model Hold Summary
+ 30. Fast Model Recovery Summary
+ 31. Fast Model Removal Summary
+ 32. Fast Model Minimum Pulse Width Summary
+ 33. Fast Model Setup: 'Clock'
+ 34. Fast Model Setup: 'nIOW'
+ 35. Fast Model Hold: 'nIOW'
+ 36. Fast Model Hold: 'Clock'
+ 37. Fast Model Recovery: 'nIOW'
+ 38. Fast Model Recovery: 'nIOR'
+ 39. Fast Model Removal: 'nIOR'
+ 40. Fast Model Removal: 'nIOW'
+ 41. Fast Model Minimum Pulse Width: 'nIOW'
+ 42. Fast Model Minimum Pulse Width: 'Clock'
+ 43. Fast Model Minimum Pulse Width: 'nIOR'
+ 44. Setup Times
+ 45. Hold Times
+ 46. Clock to Output Times
+ 47. Minimum Clock to Output Times
+ 48. Propagation Delay
+ 49. Minimum Propagation Delay
+ 50. Multicorner Timing Analysis Summary
+ 51. Setup Times
+ 52. Hold Times
+ 53. Clock to Output Times
+ 54. Minimum Clock to Output Times
+ 55. Progagation Delay
+ 56. Minimum Progagation Delay
+ 57. Setup Transfers
+ 58. Hold Transfers
+ 59. Recovery Transfers
+ 60. Removal Transfers
+ 61. Report TCCS
+ 62. Report RSKM
+ 63. Unconstrained Paths
+ 64. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; interface                                                         ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C5Q208C8                                                       ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Clock } ;
+; nIOR       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { nIOR }  ;
+; nIOW       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { nIOW }  ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                    ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name ; Note                                                          ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+; 323.73 MHz  ; 323.73 MHz      ; Clock      ;                                                               ;
+; 1307.19 MHz ; 340.02 MHz      ; nIOW       ; limit due to minimum period restriction (max I/O toggle rate) ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; Clock ; -2.089 ; -18.513       ;
+; nIOW  ; 0.235  ; 0.000         ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; nIOW  ; 0.499 ; 0.000         ;
+; Clock ; 0.770 ; 0.000         ;
++-------+-------+---------------+
+
+
++--------------------------------+
+; Slow Model Recovery Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; nIOW  ; -5.167 ; -5.167        ;
+; nIOR  ; 0.136  ; 0.000         ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Removal Summary    ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; nIOR  ; 0.098 ; 0.000         ;
+; nIOW  ; 5.107 ; 0.000         ;
++-------+-------+---------------+
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; nIOW  ; -1.941 ; -4.909                ;
+; Clock ; -1.777 ; -19.585               ;
+; nIOR  ; -1.777 ; -3.261                ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'Clock'                                                                                                                                                                                                                                                                          ;
++--------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                ; To Node                                                                                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.089 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 3.129      ;
+; -2.089 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 3.129      ;
+; -2.089 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 3.129      ;
+; -2.089 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 3.129      ;
+; -2.089 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 3.129      ;
+; -1.939 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.979      ;
+; -1.939 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.979      ;
+; -1.939 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.979      ;
+; -1.939 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.979      ;
+; -1.939 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.979      ;
+; -1.653 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.693      ;
+; -1.653 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.693      ;
+; -1.653 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.693      ;
+; -1.653 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.693      ;
+; -1.653 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.693      ;
+; -1.496 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.536      ;
+; -1.482 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.522      ;
+; -1.482 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.522      ;
+; -1.482 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.522      ;
+; -1.482 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.522      ;
+; -1.482 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.522      ;
+; -1.410 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.450      ;
+; -1.372 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.412      ;
+; -1.324 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.364      ;
+; -1.286 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.326      ;
+; -1.264 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.304      ;
+; -1.264 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.304      ;
+; -1.264 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.304      ;
+; -1.264 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.304      ;
+; -1.264 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.304      ;
+; -1.238 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.278      ;
+; -1.233 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.273      ;
+; -1.200 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.240      ;
+; -1.163 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; nIOW         ; Clock       ; 1.000        ; -0.416     ; 1.787      ;
+; -1.163 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; nIOW         ; Clock       ; 1.000        ; -0.416     ; 1.787      ;
+; -1.163 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; nIOW         ; Clock       ; 1.000        ; -0.416     ; 1.787      ;
+; -1.163 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; nIOW         ; Clock       ; 1.000        ; -0.416     ; 1.787      ;
+; -1.163 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; nIOW         ; Clock       ; 1.000        ; -0.416     ; 1.787      ;
+; -1.152 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.192      ;
+; -1.147 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.187      ;
+; -1.114 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.154      ;
+; -1.094 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.134      ;
+; -1.061 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.101      ;
+; -1.061 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.101      ;
+; -1.028 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.068      ;
+; -1.008 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.048      ;
+; -0.975 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.015      ;
+; -0.975 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.015      ;
+; -0.962 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 2.002      ;
+; -0.922 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.962      ;
+; -0.922 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.962      ;
+; -0.495 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.535      ;
+; -0.495 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.535      ;
+; -0.486 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.526      ;
+; -0.443 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.483      ;
+; -0.443 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.483      ;
+; -0.439 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.479      ;
+; -0.332 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.372      ;
++--------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'nIOW'                                                                          ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.235 ; inst2     ; inst2   ; nIOW         ; nIOW        ; 1.000        ; 0.000      ; 0.805      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'nIOW'                                                                           ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.499 ; inst2     ; inst2   ; nIOW         ; nIOW        ; 0.000        ; 0.000      ; 0.805      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'Clock'                                                                                                                                                                                                                                                                          ;
++-------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                ; To Node                                                                                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.770 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.076      ;
+; 1.066 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.372      ;
+; 1.173 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.479      ;
+; 1.176 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.482      ;
+; 1.177 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.483      ;
+; 1.177 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.483      ;
+; 1.201 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.507      ;
+; 1.206 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.512      ;
+; 1.220 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.526      ;
+; 1.229 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.535      ;
+; 1.229 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.535      ;
+; 1.239 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.545      ;
+; 1.654 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.960      ;
+; 1.656 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.962      ;
+; 1.656 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.962      ;
+; 1.680 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.986      ;
+; 1.685 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.991      ;
+; 1.696 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.002      ;
+; 1.709 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.015      ;
+; 1.709 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.015      ;
+; 1.719 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.025      ;
+; 1.740 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.046      ;
+; 1.742 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.048      ;
+; 1.762 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.068      ;
+; 1.766 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.072      ;
+; 1.795 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.101      ;
+; 1.795 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.101      ;
+; 1.805 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.111      ;
+; 1.826 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.132      ;
+; 1.828 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.134      ;
+; 1.848 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.154      ;
+; 1.852 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.158      ;
+; 1.881 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.187      ;
+; 1.886 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.192      ;
+; 1.897 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; nIOW         ; Clock       ; 0.000        ; -0.416     ; 1.787      ;
+; 1.897 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; nIOW         ; Clock       ; 0.000        ; -0.416     ; 1.787      ;
+; 1.897 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; nIOW         ; Clock       ; 0.000        ; -0.416     ; 1.787      ;
+; 1.897 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; nIOW         ; Clock       ; 0.000        ; -0.416     ; 1.787      ;
+; 1.897 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; nIOW         ; Clock       ; 0.000        ; -0.416     ; 1.787      ;
+; 1.912 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.218      ;
+; 1.934 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.240      ;
+; 1.967 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.273      ;
+; 1.972 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.278      ;
+; 1.998 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.304      ;
+; 2.020 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.326      ;
+; 2.058 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.364      ;
+; 2.106 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.412      ;
+; 2.144 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.450      ;
+; 2.216 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.522      ;
+; 2.216 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.522      ;
+; 2.216 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.522      ;
+; 2.230 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.536      ;
+; 2.387 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.693      ;
+; 2.387 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.693      ;
+; 2.387 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.693      ;
+; 2.387 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 2.693      ;
+; 2.823 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 3.129      ;
+; 2.823 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 3.129      ;
++-------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'nIOW'                                                                                                                                                                       ;
++--------+----------------------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; -5.167 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; inst2   ; Clock        ; nIOW        ; 0.500        ; -2.503     ; 3.204      ;
+; -5.118 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; inst2   ; Clock        ; nIOW        ; 0.500        ; -2.503     ; 3.155      ;
+; -4.933 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; inst2   ; Clock        ; nIOW        ; 0.500        ; -2.503     ; 2.970      ;
+; -4.747 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; inst2   ; Clock        ; nIOW        ; 0.500        ; -2.503     ; 2.784      ;
+; -4.610 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; inst2   ; Clock        ; nIOW        ; 0.500        ; -2.503     ; 2.647      ;
+; -4.564 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; inst2   ; Clock        ; nIOW        ; 0.500        ; -2.503     ; 2.601      ;
+; -4.373 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; inst2   ; Clock        ; nIOW        ; 0.500        ; -2.503     ; 2.410      ;
++--------+----------------------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'nIOR'                                                                       ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.136 ; nIOW      ; inst13  ; nIOW         ; nIOR        ; 0.500        ; 2.972      ; 3.376      ;
+; 0.636 ; nIOW      ; inst13  ; nIOW         ; nIOR        ; 1.000        ; 2.972      ; 3.376      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'nIOR'                                                                        ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.098 ; nIOW      ; inst13  ; nIOW         ; nIOR        ; 0.000        ; 2.972      ; 3.376      ;
+; 0.598 ; nIOW      ; inst13  ; nIOW         ; nIOR        ; -0.500       ; 2.972      ; 3.376      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'nIOW'                                                                                                                                                                       ;
++-------+----------------------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; 5.107 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; inst2   ; Clock        ; nIOW        ; -0.500       ; -2.503     ; 2.410      ;
+; 5.298 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; inst2   ; Clock        ; nIOW        ; -0.500       ; -2.503     ; 2.601      ;
+; 5.344 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; inst2   ; Clock        ; nIOW        ; -0.500       ; -2.503     ; 2.647      ;
+; 5.481 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; inst2   ; Clock        ; nIOW        ; -0.500       ; -2.503     ; 2.784      ;
+; 5.667 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; inst2   ; Clock        ; nIOW        ; -0.500       ; -2.503     ; 2.970      ;
+; 5.852 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; inst2   ; Clock        ; nIOW        ; -0.500       ; -2.503     ; 3.155      ;
+; 5.901 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; inst2   ; Clock        ; nIOW        ; -0.500       ; -2.503     ; 3.204      ;
++-------+----------------------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'nIOW'                                                        ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target       ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; -1.941 ; 1.000        ; 2.941          ; Port Rate        ; nIOW  ; Rise       ; nIOW         ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; nIOW  ; Fall       ; inst14       ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; nIOW  ; Fall       ; inst14       ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; nIOW  ; Fall       ; inst2        ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; nIOW  ; Fall       ; inst2        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nIOW  ; Rise       ; inst14|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nIOW  ; Rise       ; inst14|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nIOW  ; Rise       ; inst2|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nIOW  ; Rise       ; inst2|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nIOW  ; Rise       ; nIOW|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nIOW  ; Rise       ; nIOW|combout ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'Clock'                                                                                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------------------------------------------+
+; -1.777 ; 1.000        ; 2.777          ; Port Rate        ; Clock ; Rise       ; Clock                                                                                                    ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock|combout                                                                                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock|combout                                                                                            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[0]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[0]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[1]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[1]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[2]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[2]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[3]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[3]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[4]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[4]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[5]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[5]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[6]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[6]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst|combout                                                                                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst|combout                                                                                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst|datad                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst|datad                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst~0|combout                                                                                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst~0|combout                                                                                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst~0|datac                                                                                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst~0|datac                                                                                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst~clkctrl|inclk[0]                                                                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst~clkctrl|inclk[0]                                                                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst~clkctrl|outclk                                                                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst~clkctrl|outclk                                                                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[0]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[0]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[1]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[1]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[2]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[2]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[3]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[3]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[4]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[4]|clk                                 ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'nIOR'                                                        ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target       ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; -1.777 ; 1.000        ; 2.777          ; Port Rate        ; nIOR  ; Rise       ; nIOR         ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; nIOR  ; Fall       ; inst13       ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; nIOR  ; Fall       ; inst13       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nIOR  ; Rise       ; inst13|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nIOR  ; Rise       ; inst13|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nIOR  ; Rise       ; nIOR|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nIOR  ; Rise       ; nIOR|combout ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; AD[*]     ; nIOW       ; 6.131 ; 6.131 ; Fall       ; nIOW            ;
+;  AD[0]    ; nIOW       ; 6.082 ; 6.082 ; Fall       ; nIOW            ;
+;  AD[1]    ; nIOW       ; 6.131 ; 6.131 ; Fall       ; nIOW            ;
+;  AD[2]    ; nIOW       ; 6.032 ; 6.032 ; Fall       ; nIOW            ;
+;  AD[3]    ; nIOW       ; 5.750 ; 5.750 ; Fall       ; nIOW            ;
+;  AD[4]    ; nIOW       ; 0.213 ; 0.213 ; Fall       ; nIOW            ;
+;  AD[5]    ; nIOW       ; 0.636 ; 0.636 ; Fall       ; nIOW            ;
+;  AD[6]    ; nIOW       ; 5.349 ; 5.349 ; Fall       ; nIOW            ;
+;  AD[7]    ; nIOW       ; 0.569 ; 0.569 ; Fall       ; nIOW            ;
+; Start     ; nIOW       ; 4.307 ; 4.307 ; Fall       ; nIOW            ;
+; Stop      ; nIOW       ; 4.273 ; 4.273 ; Fall       ; nIOW            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; AD[*]     ; nIOW       ; 0.053  ; 0.053  ; Fall       ; nIOW            ;
+;  AD[0]    ; nIOW       ; -5.816 ; -5.816 ; Fall       ; nIOW            ;
+;  AD[1]    ; nIOW       ; -5.865 ; -5.865 ; Fall       ; nIOW            ;
+;  AD[2]    ; nIOW       ; -5.766 ; -5.766 ; Fall       ; nIOW            ;
+;  AD[3]    ; nIOW       ; -5.484 ; -5.484 ; Fall       ; nIOW            ;
+;  AD[4]    ; nIOW       ; 0.053  ; 0.053  ; Fall       ; nIOW            ;
+;  AD[5]    ; nIOW       ; -0.370 ; -0.370 ; Fall       ; nIOW            ;
+;  AD[6]    ; nIOW       ; -5.083 ; -5.083 ; Fall       ; nIOW            ;
+;  AD[7]    ; nIOW       ; -0.303 ; -0.303 ; Fall       ; nIOW            ;
+; Start     ; nIOW       ; -4.041 ; -4.041 ; Fall       ; nIOW            ;
+; Stop      ; nIOW       ; -4.007 ; -4.007 ; Fall       ; nIOW            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Per_stop  ; Clock      ; 11.926 ; 11.926 ; Rise       ; Clock           ;
+; Result    ; Clock      ; 8.214  ; 8.214  ; Rise       ; Clock           ;
+; Result    ; Clock      ; 9.394  ; 9.394  ; Fall       ; Clock           ;
+; T         ; Clock      ; 8.758  ; 8.758  ; Fall       ; Clock           ;
+; count[*]  ; Clock      ; 8.777  ; 8.777  ; Fall       ; Clock           ;
+;  count[0] ; Clock      ; 8.410  ; 8.410  ; Fall       ; Clock           ;
+;  count[1] ; Clock      ; 8.100  ; 8.100  ; Fall       ; Clock           ;
+;  count[2] ; Clock      ; 8.777  ; 8.777  ; Fall       ; Clock           ;
+;  count[3] ; Clock      ; 8.372  ; 8.372  ; Fall       ; Clock           ;
+;  count[4] ; Clock      ; 8.161  ; 8.161  ; Fall       ; Clock           ;
+; Read      ; nIOR       ; 8.941  ; 8.941  ; Fall       ; nIOR            ;
+; Result    ; nIOR       ; 9.958  ; 9.958  ; Fall       ; nIOR            ;
+; count[*]  ; nIOR       ; 9.773  ; 9.773  ; Fall       ; nIOR            ;
+;  count[0] ; nIOR       ; 8.971  ; 8.971  ; Fall       ; nIOR            ;
+;  count[1] ; nIOR       ; 8.932  ; 8.932  ; Fall       ; nIOR            ;
+;  count[2] ; nIOR       ; 9.773  ; 9.773  ; Fall       ; nIOR            ;
+;  count[3] ; nIOR       ; 9.202  ; 9.202  ; Fall       ; nIOR            ;
+;  count[4] ; nIOR       ; 8.909  ; 8.909  ; Fall       ; nIOR            ;
+; En        ; nIOW       ; 7.447  ; 7.447  ; Fall       ; nIOW            ;
+; Result    ; nIOW       ; 10.065 ; 10.065 ; Fall       ; nIOW            ;
+; count[*]  ; nIOW       ; 8.739  ; 8.739  ; Fall       ; nIOW            ;
+;  count[0] ; nIOW       ; 8.210  ; 8.210  ; Fall       ; nIOW            ;
+;  count[1] ; nIOW       ; 8.168  ; 8.168  ; Fall       ; nIOW            ;
+;  count[2] ; nIOW       ; 8.739  ; 8.739  ; Fall       ; nIOW            ;
+;  count[3] ; nIOW       ; 8.445  ; 8.445  ; Fall       ; nIOW            ;
+;  count[4] ; nIOW       ; 8.571  ; 8.571  ; Fall       ; nIOW            ;
+; sa        ; nIOW       ; 8.367  ; 8.367  ; Fall       ; nIOW            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Per_stop  ; Clock      ; 11.132 ; 11.132 ; Rise       ; Clock           ;
+; Result    ; Clock      ; 8.214  ; 8.214  ; Rise       ; Clock           ;
+; Result    ; Clock      ; 7.950  ; 7.950  ; Fall       ; Clock           ;
+; T         ; Clock      ; 7.933  ; 7.933  ; Fall       ; Clock           ;
+; count[*]  ; Clock      ; 8.100  ; 8.100  ; Fall       ; Clock           ;
+;  count[0] ; Clock      ; 8.410  ; 8.410  ; Fall       ; Clock           ;
+;  count[1] ; Clock      ; 8.100  ; 8.100  ; Fall       ; Clock           ;
+;  count[2] ; Clock      ; 8.777  ; 8.777  ; Fall       ; Clock           ;
+;  count[3] ; Clock      ; 8.372  ; 8.372  ; Fall       ; Clock           ;
+;  count[4] ; Clock      ; 8.161  ; 8.161  ; Fall       ; Clock           ;
+; Read      ; nIOR       ; 8.941  ; 8.941  ; Fall       ; nIOR            ;
+; Result    ; nIOR       ; 9.958  ; 9.958  ; Fall       ; nIOR            ;
+; count[*]  ; nIOR       ; 8.909  ; 8.909  ; Fall       ; nIOR            ;
+;  count[0] ; nIOR       ; 8.971  ; 8.971  ; Fall       ; nIOR            ;
+;  count[1] ; nIOR       ; 8.932  ; 8.932  ; Fall       ; nIOR            ;
+;  count[2] ; nIOR       ; 9.773  ; 9.773  ; Fall       ; nIOR            ;
+;  count[3] ; nIOR       ; 9.202  ; 9.202  ; Fall       ; nIOR            ;
+;  count[4] ; nIOR       ; 8.909  ; 8.909  ; Fall       ; nIOR            ;
+; En        ; nIOW       ; 7.447  ; 7.447  ; Fall       ; nIOW            ;
+; Result    ; nIOW       ; 8.926  ; 8.926  ; Fall       ; nIOW            ;
+; count[*]  ; nIOW       ; 8.168  ; 8.168  ; Fall       ; nIOW            ;
+;  count[0] ; nIOW       ; 8.210  ; 8.210  ; Fall       ; nIOW            ;
+;  count[1] ; nIOW       ; 8.168  ; 8.168  ; Fall       ; nIOW            ;
+;  count[2] ; nIOW       ; 8.739  ; 8.739  ; Fall       ; nIOW            ;
+;  count[3] ; nIOW       ; 8.445  ; 8.445  ; Fall       ; nIOW            ;
+;  count[4] ; nIOW       ; 8.571  ; 8.571  ; Fall       ; nIOW            ;
+; sa        ; nIOW       ; 8.367  ; 8.367  ; Fall       ; nIOW            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------+
+; Propagation Delay                                    ;
++------------+-------------+----+--------+--------+----+
+; Input Port ; Output Port ; RR ; RF     ; FR     ; FF ;
++------------+-------------+----+--------+--------+----+
+; Stop       ; Read        ;    ; 10.663 ; 10.663 ;    ;
+; Stop       ; Result      ;    ; 12.061 ; 12.061 ;    ;
+; Stop       ; count[0]    ;    ; 11.023 ; 11.023 ;    ;
+; Stop       ; count[1]    ;    ; 10.984 ; 10.984 ;    ;
+; Stop       ; count[2]    ;    ; 11.874 ; 11.874 ;    ;
+; Stop       ; count[3]    ;    ; 11.253 ; 11.253 ;    ;
+; Stop       ; count[4]    ;    ; 10.632 ; 10.632 ;    ;
+; Stop       ; sa          ;    ; 11.180 ; 11.180 ;    ;
++------------+-------------+----+--------+--------+----+
+
+
++------------------------------------------------------+
+; Minimum Propagation Delay                            ;
++------------+-------------+----+--------+--------+----+
+; Input Port ; Output Port ; RR ; RF     ; FR     ; FF ;
++------------+-------------+----+--------+--------+----+
+; Stop       ; Read        ;    ; 10.663 ; 10.663 ;    ;
+; Stop       ; Result      ;    ; 12.061 ; 12.061 ;    ;
+; Stop       ; count[0]    ;    ; 11.023 ; 11.023 ;    ;
+; Stop       ; count[1]    ;    ; 10.984 ; 10.984 ;    ;
+; Stop       ; count[2]    ;    ; 11.874 ; 11.874 ;    ;
+; Stop       ; count[3]    ;    ; 11.253 ; 11.253 ;    ;
+; Stop       ; count[4]    ;    ; 10.632 ; 10.632 ;    ;
+; Stop       ; sa          ;    ; 11.180 ; 11.180 ;    ;
++------------+-------------+----+--------+--------+----+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; Clock ; -0.076 ; -0.380        ;
+; nIOW  ; 0.665  ; 0.000         ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; nIOW  ; 0.215 ; 0.000         ;
+; Clock ; 0.251 ; 0.000         ;
++-------+-------+---------------+
+
+
++--------------------------------+
+; Fast Model Recovery Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; nIOW  ; -1.758 ; -1.758        ;
+; nIOR  ; 0.416  ; 0.000         ;
++-------+--------+---------------+
+
+
++--------------------------------+
+; Fast Model Removal Summary     ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; nIOR  ; -0.036 ; -0.036        ;
+; nIOW  ; 2.393  ; 0.000         ;
++-------+--------+---------------+
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; nIOW  ; -1.380 ; -3.380                ;
+; Clock ; -1.222 ; -13.222               ;
+; nIOR  ; -1.222 ; -2.222                ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'Clock'                                                                                                                                                                                                                                                                          ;
++--------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                ; To Node                                                                                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.076 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.108      ;
+; -0.076 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.108      ;
+; -0.076 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.108      ;
+; -0.076 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.108      ;
+; -0.076 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.108      ;
+; -0.054 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.086      ;
+; -0.054 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.086      ;
+; -0.054 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.086      ;
+; -0.054 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.086      ;
+; -0.054 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 1.086      ;
+; 0.057  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.975      ;
+; 0.057  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.975      ;
+; 0.057  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.975      ;
+; 0.057  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.975      ;
+; 0.057  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.975      ;
+; 0.094  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.938      ;
+; 0.094  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.938      ;
+; 0.094  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.938      ;
+; 0.094  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.938      ;
+; 0.094  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.938      ;
+; 0.137  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.895      ;
+; 0.143  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.889      ;
+; 0.143  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.889      ;
+; 0.143  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.889      ;
+; 0.143  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.889      ;
+; 0.143  ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.889      ;
+; 0.172  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.860      ;
+; 0.186  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.846      ;
+; 0.188  ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; nIOW         ; Clock       ; 1.000        ; -0.104     ; 0.740      ;
+; 0.188  ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; nIOW         ; Clock       ; 1.000        ; -0.104     ; 0.740      ;
+; 0.188  ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; nIOW         ; Clock       ; 1.000        ; -0.104     ; 0.740      ;
+; 0.188  ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; nIOW         ; Clock       ; 1.000        ; -0.104     ; 0.740      ;
+; 0.188  ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; nIOW         ; Clock       ; 1.000        ; -0.104     ; 0.740      ;
+; 0.207  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.825      ;
+; 0.221  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.811      ;
+; 0.242  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.790      ;
+; 0.256  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.776      ;
+; 0.260  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.772      ;
+; 0.277  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.755      ;
+; 0.291  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.741      ;
+; 0.295  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.737      ;
+; 0.310  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.722      ;
+; 0.326  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.706      ;
+; 0.329  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.703      ;
+; 0.330  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.702      ;
+; 0.345  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.687      ;
+; 0.364  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.668      ;
+; 0.365  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.667      ;
+; 0.371  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.661      ;
+; 0.379  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.653      ;
+; 0.380  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.652      ;
+; 0.504  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.528      ;
+; 0.505  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.527      ;
+; 0.511  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.521      ;
+; 0.517  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.515      ;
+; 0.518  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.514      ;
+; 0.519  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.513      ;
+; 0.551  ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 1.000        ; 0.000      ; 0.481      ;
++--------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'nIOW'                                                                          ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.665 ; inst2     ; inst2   ; nIOW         ; nIOW        ; 1.000        ; 0.000      ; 0.367      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'nIOW'                                                                           ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; inst2     ; inst2   ; nIOW         ; nIOW        ; 0.000        ; 0.000      ; 0.367      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'Clock'                                                                                                                                                                                                                                                                          ;
++-------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                ; To Node                                                                                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.251 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.403      ;
+; 0.329 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.481      ;
+; 0.360 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.514      ;
+; 0.363 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.515      ;
+; 0.369 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.521      ;
+; 0.372 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.524      ;
+; 0.374 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.526      ;
+; 0.375 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.528      ;
+; 0.378 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.530      ;
+; 0.498 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.650      ;
+; 0.500 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.652      ;
+; 0.501 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.653      ;
+; 0.509 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.661      ;
+; 0.510 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.662      ;
+; 0.512 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.664      ;
+; 0.515 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.667      ;
+; 0.516 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.668      ;
+; 0.518 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.670      ;
+; 0.533 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.685      ;
+; 0.535 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.687      ;
+; 0.545 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.697      ;
+; 0.550 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.702      ;
+; 0.551 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.703      ;
+; 0.553 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.705      ;
+; 0.554 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.706      ;
+; 0.568 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.720      ;
+; 0.570 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.722      ;
+; 0.580 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.732      ;
+; 0.585 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.737      ;
+; 0.589 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.741      ;
+; 0.603 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.755      ;
+; 0.603 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.755      ;
+; 0.620 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.772      ;
+; 0.624 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.776      ;
+; 0.638 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.790      ;
+; 0.659 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.811      ;
+; 0.673 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.825      ;
+; 0.692 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; nIOW         ; Clock       ; 0.000        ; -0.104     ; 0.740      ;
+; 0.692 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; nIOW         ; Clock       ; 0.000        ; -0.104     ; 0.740      ;
+; 0.692 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; nIOW         ; Clock       ; 0.000        ; -0.104     ; 0.740      ;
+; 0.692 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; nIOW         ; Clock       ; 0.000        ; -0.104     ; 0.740      ;
+; 0.692 ; inst2                                                                                                    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; nIOW         ; Clock       ; 0.000        ; -0.104     ; 0.740      ;
+; 0.694 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.846      ;
+; 0.708 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.860      ;
+; 0.737 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.889      ;
+; 0.743 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.895      ;
+; 0.786 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.938      ;
+; 0.786 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.938      ;
+; 0.786 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.938      ;
+; 0.823 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.975      ;
+; 0.823 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.975      ;
+; 0.823 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.975      ;
+; 0.823 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 0.975      ;
+; 0.956 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.108      ;
+; 0.956 ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ; Clock        ; Clock       ; 0.000        ; 0.000      ; 1.108      ;
++-------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'nIOW'                                                                                                                                                                       ;
++--------+----------------------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; -1.758 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; inst2   ; Clock        ; nIOW        ; 0.500        ; -1.080     ; 1.210      ;
+; -1.742 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; inst2   ; Clock        ; nIOW        ; 0.500        ; -1.080     ; 1.194      ;
+; -1.699 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; inst2   ; Clock        ; nIOW        ; 0.500        ; -1.080     ; 1.151      ;
+; -1.620 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; inst2   ; Clock        ; nIOW        ; 0.500        ; -1.080     ; 1.072      ;
+; -1.588 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; inst2   ; Clock        ; nIOW        ; 0.500        ; -1.080     ; 1.040      ;
+; -1.578 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; inst2   ; Clock        ; nIOW        ; 0.500        ; -1.080     ; 1.030      ;
+; -1.513 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; inst2   ; Clock        ; nIOW        ; 0.500        ; -1.080     ; 0.965      ;
++--------+----------------------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'nIOR'                                                                       ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.416 ; nIOW      ; inst13  ; nIOW         ; nIOR        ; 0.500        ; 1.314      ; 1.430      ;
+; 0.916 ; nIOW      ; inst13  ; nIOW         ; nIOR        ; 1.000        ; 1.314      ; 1.430      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'nIOR'                                                                         ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -0.036 ; nIOW      ; inst13  ; nIOW         ; nIOR        ; 0.000        ; 1.314      ; 1.430      ;
+; 0.464  ; nIOW      ; inst13  ; nIOW         ; nIOR        ; -0.500       ; 1.314      ; 1.430      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'nIOW'                                                                                                                                                                       ;
++-------+----------------------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; 2.393 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ; inst2   ; Clock        ; nIOW        ; -0.500       ; -1.080     ; 0.965      ;
+; 2.458 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ; inst2   ; Clock        ; nIOW        ; -0.500       ; -1.080     ; 1.030      ;
+; 2.468 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ; inst2   ; Clock        ; nIOW        ; -0.500       ; -1.080     ; 1.040      ;
+; 2.500 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ; inst2   ; Clock        ; nIOW        ; -0.500       ; -1.080     ; 1.072      ;
+; 2.579 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ; inst2   ; Clock        ; nIOW        ; -0.500       ; -1.080     ; 1.151      ;
+; 2.622 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ; inst2   ; Clock        ; nIOW        ; -0.500       ; -1.080     ; 1.194      ;
+; 2.638 ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ; inst2   ; Clock        ; nIOW        ; -0.500       ; -1.080     ; 1.210      ;
++-------+----------------------------------------------------------------------------------------------------------+---------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'nIOW'                                                        ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target       ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; nIOW  ; Rise       ; nIOW         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; nIOW  ; Fall       ; inst14       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; nIOW  ; Fall       ; inst14       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; nIOW  ; Fall       ; inst2        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; nIOW  ; Fall       ; inst2        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nIOW  ; Rise       ; inst14|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nIOW  ; Rise       ; inst14|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nIOW  ; Rise       ; inst2|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nIOW  ; Rise       ; inst2|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nIOW  ; Rise       ; nIOW|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nIOW  ; Rise       ; nIOW|combout ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'Clock'                                                                                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------------------------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; Clock ; Rise       ; Clock                                                                                                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Fall       ; dc_scheme:inst|lpm_counter5:inst1|lpm_counter:LPM_COUNTER_component|cntr_pni:auto_generated|safe_q[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clock ; Rise       ; period_cnt:inst19|lpm_counter3:inst9|lpm_counter:LPM_COUNTER_component|cntr_rkh:auto_generated|safe_q[6] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; Clock|combout                                                                                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; Clock|combout                                                                                            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[0]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[0]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[1]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[1]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[2]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[2]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[3]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[3]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[4]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[4]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[5]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[5]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[6]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst9|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[6]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst|combout                                                                                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst|combout                                                                                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst|datad                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst|datad                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst~0|combout                                                                                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst~0|combout                                                                                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst~0|datac                                                                                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst~0|datac                                                                                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst~clkctrl|inclk[0]                                                                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst~clkctrl|inclk[0]                                                                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst19|inst~clkctrl|outclk                                                                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst19|inst~clkctrl|outclk                                                                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[0]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[0]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[1]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[1]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[2]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[2]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[3]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[3]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[4]|clk                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clock ; Rise       ; inst|inst1|LPM_COUNTER_component|auto_generated|counter_reg_bit1a[4]|clk                                 ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'nIOR'                                                        ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target       ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; nIOR  ; Rise       ; nIOR         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; nIOR  ; Fall       ; inst13       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; nIOR  ; Fall       ; inst13       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nIOR  ; Rise       ; inst13|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nIOR  ; Rise       ; inst13|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nIOR  ; Rise       ; nIOR|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nIOR  ; Rise       ; nIOR|combout ;
++--------+--------------+----------------+------------------+-------+------------+--------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; AD[*]     ; nIOW       ; 2.809  ; 2.809  ; Fall       ; nIOW            ;
+;  AD[0]    ; nIOW       ; 2.785  ; 2.785  ; Fall       ; nIOW            ;
+;  AD[1]    ; nIOW       ; 2.809  ; 2.809  ; Fall       ; nIOW            ;
+;  AD[2]    ; nIOW       ; 2.768  ; 2.768  ; Fall       ; nIOW            ;
+;  AD[3]    ; nIOW       ; 2.687  ; 2.687  ; Fall       ; nIOW            ;
+;  AD[4]    ; nIOW       ; -0.084 ; -0.084 ; Fall       ; nIOW            ;
+;  AD[5]    ; nIOW       ; 0.033  ; 0.033  ; Fall       ; nIOW            ;
+;  AD[6]    ; nIOW       ; 2.581  ; 2.581  ; Fall       ; nIOW            ;
+;  AD[7]    ; nIOW       ; 0.015  ; 0.015  ; Fall       ; nIOW            ;
+; Start     ; nIOW       ; 2.250  ; 2.250  ; Fall       ; nIOW            ;
+; Stop      ; nIOW       ; 2.227  ; 2.227  ; Fall       ; nIOW            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; AD[*]     ; nIOW       ; 0.204  ; 0.204  ; Fall       ; nIOW            ;
+;  AD[0]    ; nIOW       ; -2.665 ; -2.665 ; Fall       ; nIOW            ;
+;  AD[1]    ; nIOW       ; -2.689 ; -2.689 ; Fall       ; nIOW            ;
+;  AD[2]    ; nIOW       ; -2.648 ; -2.648 ; Fall       ; nIOW            ;
+;  AD[3]    ; nIOW       ; -2.567 ; -2.567 ; Fall       ; nIOW            ;
+;  AD[4]    ; nIOW       ; 0.204  ; 0.204  ; Fall       ; nIOW            ;
+;  AD[5]    ; nIOW       ; 0.087  ; 0.087  ; Fall       ; nIOW            ;
+;  AD[6]    ; nIOW       ; -2.461 ; -2.461 ; Fall       ; nIOW            ;
+;  AD[7]    ; nIOW       ; 0.105  ; 0.105  ; Fall       ; nIOW            ;
+; Start     ; nIOW       ; -2.130 ; -2.130 ; Fall       ; nIOW            ;
+; Stop      ; nIOW       ; -2.107 ; -2.107 ; Fall       ; nIOW            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Per_stop  ; Clock      ; 4.954 ; 4.954 ; Rise       ; Clock           ;
+; Result    ; Clock      ; 3.325 ; 3.325 ; Rise       ; Clock           ;
+; Result    ; Clock      ; 3.820 ; 3.820 ; Fall       ; Clock           ;
+; T         ; Clock      ; 3.699 ; 3.699 ; Fall       ; Clock           ;
+; count[*]  ; Clock      ; 3.761 ; 3.761 ; Fall       ; Clock           ;
+;  count[0] ; Clock      ; 3.595 ; 3.595 ; Fall       ; Clock           ;
+;  count[1] ; Clock      ; 3.491 ; 3.491 ; Fall       ; Clock           ;
+;  count[2] ; Clock      ; 3.761 ; 3.761 ; Fall       ; Clock           ;
+;  count[3] ; Clock      ; 3.643 ; 3.643 ; Fall       ; Clock           ;
+;  count[4] ; Clock      ; 3.475 ; 3.475 ; Fall       ; Clock           ;
+; Read      ; nIOR       ; 3.787 ; 3.787 ; Fall       ; nIOR            ;
+; Result    ; nIOR       ; 4.005 ; 4.005 ; Fall       ; nIOR            ;
+; count[*]  ; nIOR       ; 4.042 ; 4.042 ; Fall       ; nIOR            ;
+;  count[0] ; nIOR       ; 3.822 ; 3.822 ; Fall       ; nIOR            ;
+;  count[1] ; nIOR       ; 3.785 ; 3.785 ; Fall       ; nIOR            ;
+;  count[2] ; nIOR       ; 4.042 ; 4.042 ; Fall       ; nIOR            ;
+;  count[3] ; nIOR       ; 3.936 ; 3.936 ; Fall       ; nIOR            ;
+;  count[4] ; nIOR       ; 3.765 ; 3.765 ; Fall       ; nIOR            ;
+; En        ; nIOW       ; 3.248 ; 3.248 ; Fall       ; nIOW            ;
+; Result    ; nIOW       ; 4.045 ; 4.045 ; Fall       ; nIOW            ;
+; count[*]  ; nIOW       ; 3.692 ; 3.692 ; Fall       ; nIOW            ;
+;  count[0] ; nIOW       ; 3.502 ; 3.502 ; Fall       ; nIOW            ;
+;  count[1] ; nIOW       ; 3.463 ; 3.463 ; Fall       ; nIOW            ;
+;  count[2] ; nIOW       ; 3.692 ; 3.692 ; Fall       ; nIOW            ;
+;  count[3] ; nIOW       ; 3.620 ; 3.620 ; Fall       ; nIOW            ;
+;  count[4] ; nIOW       ; 3.564 ; 3.564 ; Fall       ; nIOW            ;
+; sa        ; nIOW       ; 3.609 ; 3.609 ; Fall       ; nIOW            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Per_stop  ; Clock      ; 4.709 ; 4.709 ; Rise       ; Clock           ;
+; Result    ; Clock      ; 3.325 ; 3.325 ; Rise       ; Clock           ;
+; Result    ; Clock      ; 3.325 ; 3.325 ; Fall       ; Clock           ;
+; T         ; Clock      ; 3.480 ; 3.480 ; Fall       ; Clock           ;
+; count[*]  ; Clock      ; 3.475 ; 3.475 ; Fall       ; Clock           ;
+;  count[0] ; Clock      ; 3.595 ; 3.595 ; Fall       ; Clock           ;
+;  count[1] ; Clock      ; 3.491 ; 3.491 ; Fall       ; Clock           ;
+;  count[2] ; Clock      ; 3.761 ; 3.761 ; Fall       ; Clock           ;
+;  count[3] ; Clock      ; 3.643 ; 3.643 ; Fall       ; Clock           ;
+;  count[4] ; Clock      ; 3.475 ; 3.475 ; Fall       ; Clock           ;
+; Read      ; nIOR       ; 3.787 ; 3.787 ; Fall       ; nIOR            ;
+; Result    ; nIOR       ; 4.005 ; 4.005 ; Fall       ; nIOR            ;
+; count[*]  ; nIOR       ; 3.765 ; 3.765 ; Fall       ; nIOR            ;
+;  count[0] ; nIOR       ; 3.822 ; 3.822 ; Fall       ; nIOR            ;
+;  count[1] ; nIOR       ; 3.785 ; 3.785 ; Fall       ; nIOR            ;
+;  count[2] ; nIOR       ; 4.042 ; 4.042 ; Fall       ; nIOR            ;
+;  count[3] ; nIOR       ; 3.936 ; 3.936 ; Fall       ; nIOR            ;
+;  count[4] ; nIOR       ; 3.765 ; 3.765 ; Fall       ; nIOR            ;
+; En        ; nIOW       ; 3.248 ; 3.248 ; Fall       ; nIOW            ;
+; Result    ; nIOW       ; 3.658 ; 3.658 ; Fall       ; nIOW            ;
+; count[*]  ; nIOW       ; 3.463 ; 3.463 ; Fall       ; nIOW            ;
+;  count[0] ; nIOW       ; 3.502 ; 3.502 ; Fall       ; nIOW            ;
+;  count[1] ; nIOW       ; 3.463 ; 3.463 ; Fall       ; nIOW            ;
+;  count[2] ; nIOW       ; 3.692 ; 3.692 ; Fall       ; nIOW            ;
+;  count[3] ; nIOW       ; 3.620 ; 3.620 ; Fall       ; nIOW            ;
+;  count[4] ; nIOW       ; 3.564 ; 3.564 ; Fall       ; nIOW            ;
+; sa        ; nIOW       ; 3.609 ; 3.609 ; Fall       ; nIOW            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; Stop       ; Read        ;    ; 5.119 ; 5.119 ;    ;
+; Stop       ; Result      ;    ; 5.525 ; 5.525 ;    ;
+; Stop       ; count[0]    ;    ; 5.284 ; 5.284 ;    ;
+; Stop       ; count[1]    ;    ; 5.246 ; 5.246 ;    ;
+; Stop       ; count[2]    ;    ; 5.560 ; 5.560 ;    ;
+; Stop       ; count[3]    ;    ; 5.398 ; 5.398 ;    ;
+; Stop       ; count[4]    ;    ; 5.096 ; 5.096 ;    ;
+; Stop       ; sa          ;    ; 5.391 ; 5.391 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; Stop       ; Read        ;    ; 5.119 ; 5.119 ;    ;
+; Stop       ; Result      ;    ; 5.525 ; 5.525 ;    ;
+; Stop       ; count[0]    ;    ; 5.284 ; 5.284 ;    ;
+; Stop       ; count[1]    ;    ; 5.246 ; 5.246 ;    ;
+; Stop       ; count[2]    ;    ; 5.560 ; 5.560 ;    ;
+; Stop       ; count[3]    ;    ; 5.398 ; 5.398 ;    ;
+; Stop       ; count[4]    ;    ; 5.096 ; 5.096 ;    ;
+; Stop       ; sa          ;    ; 5.391 ; 5.391 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.089  ; 0.215 ; -5.167   ; -0.036  ; -1.941              ;
+;  Clock           ; -2.089  ; 0.251 ; N/A      ; N/A     ; -1.777              ;
+;  nIOR            ; N/A     ; N/A   ; 0.136    ; -0.036  ; -1.777              ;
+;  nIOW            ; 0.235   ; 0.215 ; -5.167   ; 2.393   ; -1.941              ;
+; Design-wide TNS  ; -18.513 ; 0.0   ; -5.167   ; -0.036  ; -27.755             ;
+;  Clock           ; -18.513 ; 0.000 ; N/A      ; N/A     ; -19.585             ;
+;  nIOR            ; N/A     ; N/A   ; 0.000    ; -0.036  ; -3.261              ;
+;  nIOW            ; 0.000   ; 0.000 ; -5.167   ; 0.000   ; -4.909              ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; AD[*]     ; nIOW       ; 6.131 ; 6.131 ; Fall       ; nIOW            ;
+;  AD[0]    ; nIOW       ; 6.082 ; 6.082 ; Fall       ; nIOW            ;
+;  AD[1]    ; nIOW       ; 6.131 ; 6.131 ; Fall       ; nIOW            ;
+;  AD[2]    ; nIOW       ; 6.032 ; 6.032 ; Fall       ; nIOW            ;
+;  AD[3]    ; nIOW       ; 5.750 ; 5.750 ; Fall       ; nIOW            ;
+;  AD[4]    ; nIOW       ; 0.213 ; 0.213 ; Fall       ; nIOW            ;
+;  AD[5]    ; nIOW       ; 0.636 ; 0.636 ; Fall       ; nIOW            ;
+;  AD[6]    ; nIOW       ; 5.349 ; 5.349 ; Fall       ; nIOW            ;
+;  AD[7]    ; nIOW       ; 0.569 ; 0.569 ; Fall       ; nIOW            ;
+; Start     ; nIOW       ; 4.307 ; 4.307 ; Fall       ; nIOW            ;
+; Stop      ; nIOW       ; 4.273 ; 4.273 ; Fall       ; nIOW            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; AD[*]     ; nIOW       ; 0.204  ; 0.204  ; Fall       ; nIOW            ;
+;  AD[0]    ; nIOW       ; -2.665 ; -2.665 ; Fall       ; nIOW            ;
+;  AD[1]    ; nIOW       ; -2.689 ; -2.689 ; Fall       ; nIOW            ;
+;  AD[2]    ; nIOW       ; -2.648 ; -2.648 ; Fall       ; nIOW            ;
+;  AD[3]    ; nIOW       ; -2.567 ; -2.567 ; Fall       ; nIOW            ;
+;  AD[4]    ; nIOW       ; 0.204  ; 0.204  ; Fall       ; nIOW            ;
+;  AD[5]    ; nIOW       ; 0.087  ; 0.087  ; Fall       ; nIOW            ;
+;  AD[6]    ; nIOW       ; -2.461 ; -2.461 ; Fall       ; nIOW            ;
+;  AD[7]    ; nIOW       ; 0.105  ; 0.105  ; Fall       ; nIOW            ;
+; Start     ; nIOW       ; -2.130 ; -2.130 ; Fall       ; nIOW            ;
+; Stop      ; nIOW       ; -2.107 ; -2.107 ; Fall       ; nIOW            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Per_stop  ; Clock      ; 11.926 ; 11.926 ; Rise       ; Clock           ;
+; Result    ; Clock      ; 8.214  ; 8.214  ; Rise       ; Clock           ;
+; Result    ; Clock      ; 9.394  ; 9.394  ; Fall       ; Clock           ;
+; T         ; Clock      ; 8.758  ; 8.758  ; Fall       ; Clock           ;
+; count[*]  ; Clock      ; 8.777  ; 8.777  ; Fall       ; Clock           ;
+;  count[0] ; Clock      ; 8.410  ; 8.410  ; Fall       ; Clock           ;
+;  count[1] ; Clock      ; 8.100  ; 8.100  ; Fall       ; Clock           ;
+;  count[2] ; Clock      ; 8.777  ; 8.777  ; Fall       ; Clock           ;
+;  count[3] ; Clock      ; 8.372  ; 8.372  ; Fall       ; Clock           ;
+;  count[4] ; Clock      ; 8.161  ; 8.161  ; Fall       ; Clock           ;
+; Read      ; nIOR       ; 8.941  ; 8.941  ; Fall       ; nIOR            ;
+; Result    ; nIOR       ; 9.958  ; 9.958  ; Fall       ; nIOR            ;
+; count[*]  ; nIOR       ; 9.773  ; 9.773  ; Fall       ; nIOR            ;
+;  count[0] ; nIOR       ; 8.971  ; 8.971  ; Fall       ; nIOR            ;
+;  count[1] ; nIOR       ; 8.932  ; 8.932  ; Fall       ; nIOR            ;
+;  count[2] ; nIOR       ; 9.773  ; 9.773  ; Fall       ; nIOR            ;
+;  count[3] ; nIOR       ; 9.202  ; 9.202  ; Fall       ; nIOR            ;
+;  count[4] ; nIOR       ; 8.909  ; 8.909  ; Fall       ; nIOR            ;
+; En        ; nIOW       ; 7.447  ; 7.447  ; Fall       ; nIOW            ;
+; Result    ; nIOW       ; 10.065 ; 10.065 ; Fall       ; nIOW            ;
+; count[*]  ; nIOW       ; 8.739  ; 8.739  ; Fall       ; nIOW            ;
+;  count[0] ; nIOW       ; 8.210  ; 8.210  ; Fall       ; nIOW            ;
+;  count[1] ; nIOW       ; 8.168  ; 8.168  ; Fall       ; nIOW            ;
+;  count[2] ; nIOW       ; 8.739  ; 8.739  ; Fall       ; nIOW            ;
+;  count[3] ; nIOW       ; 8.445  ; 8.445  ; Fall       ; nIOW            ;
+;  count[4] ; nIOW       ; 8.571  ; 8.571  ; Fall       ; nIOW            ;
+; sa        ; nIOW       ; 8.367  ; 8.367  ; Fall       ; nIOW            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Per_stop  ; Clock      ; 4.709 ; 4.709 ; Rise       ; Clock           ;
+; Result    ; Clock      ; 3.325 ; 3.325 ; Rise       ; Clock           ;
+; Result    ; Clock      ; 3.325 ; 3.325 ; Fall       ; Clock           ;
+; T         ; Clock      ; 3.480 ; 3.480 ; Fall       ; Clock           ;
+; count[*]  ; Clock      ; 3.475 ; 3.475 ; Fall       ; Clock           ;
+;  count[0] ; Clock      ; 3.595 ; 3.595 ; Fall       ; Clock           ;
+;  count[1] ; Clock      ; 3.491 ; 3.491 ; Fall       ; Clock           ;
+;  count[2] ; Clock      ; 3.761 ; 3.761 ; Fall       ; Clock           ;
+;  count[3] ; Clock      ; 3.643 ; 3.643 ; Fall       ; Clock           ;
+;  count[4] ; Clock      ; 3.475 ; 3.475 ; Fall       ; Clock           ;
+; Read      ; nIOR       ; 3.787 ; 3.787 ; Fall       ; nIOR            ;
+; Result    ; nIOR       ; 4.005 ; 4.005 ; Fall       ; nIOR            ;
+; count[*]  ; nIOR       ; 3.765 ; 3.765 ; Fall       ; nIOR            ;
+;  count[0] ; nIOR       ; 3.822 ; 3.822 ; Fall       ; nIOR            ;
+;  count[1] ; nIOR       ; 3.785 ; 3.785 ; Fall       ; nIOR            ;
+;  count[2] ; nIOR       ; 4.042 ; 4.042 ; Fall       ; nIOR            ;
+;  count[3] ; nIOR       ; 3.936 ; 3.936 ; Fall       ; nIOR            ;
+;  count[4] ; nIOR       ; 3.765 ; 3.765 ; Fall       ; nIOR            ;
+; En        ; nIOW       ; 3.248 ; 3.248 ; Fall       ; nIOW            ;
+; Result    ; nIOW       ; 3.658 ; 3.658 ; Fall       ; nIOW            ;
+; count[*]  ; nIOW       ; 3.463 ; 3.463 ; Fall       ; nIOW            ;
+;  count[0] ; nIOW       ; 3.502 ; 3.502 ; Fall       ; nIOW            ;
+;  count[1] ; nIOW       ; 3.463 ; 3.463 ; Fall       ; nIOW            ;
+;  count[2] ; nIOW       ; 3.692 ; 3.692 ; Fall       ; nIOW            ;
+;  count[3] ; nIOW       ; 3.620 ; 3.620 ; Fall       ; nIOW            ;
+;  count[4] ; nIOW       ; 3.564 ; 3.564 ; Fall       ; nIOW            ;
+; sa        ; nIOW       ; 3.609 ; 3.609 ; Fall       ; nIOW            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------+
+; Progagation Delay                                    ;
++------------+-------------+----+--------+--------+----+
+; Input Port ; Output Port ; RR ; RF     ; FR     ; FF ;
++------------+-------------+----+--------+--------+----+
+; Stop       ; Read        ;    ; 10.663 ; 10.663 ;    ;
+; Stop       ; Result      ;    ; 12.061 ; 12.061 ;    ;
+; Stop       ; count[0]    ;    ; 11.023 ; 11.023 ;    ;
+; Stop       ; count[1]    ;    ; 10.984 ; 10.984 ;    ;
+; Stop       ; count[2]    ;    ; 11.874 ; 11.874 ;    ;
+; Stop       ; count[3]    ;    ; 11.253 ; 11.253 ;    ;
+; Stop       ; count[4]    ;    ; 10.632 ; 10.632 ;    ;
+; Stop       ; sa          ;    ; 11.180 ; 11.180 ;    ;
++------------+-------------+----+--------+--------+----+
+
+
++----------------------------------------------------+
+; Minimum Progagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; Stop       ; Read        ;    ; 5.119 ; 5.119 ;    ;
+; Stop       ; Result      ;    ; 5.525 ; 5.525 ;    ;
+; Stop       ; count[0]    ;    ; 5.284 ; 5.284 ;    ;
+; Stop       ; count[1]    ;    ; 5.246 ; 5.246 ;    ;
+; Stop       ; count[2]    ;    ; 5.560 ; 5.560 ;    ;
+; Stop       ; count[3]    ;    ; 5.398 ; 5.398 ;    ;
+; Stop       ; count[4]    ;    ; 5.096 ; 5.096 ;    ;
+; Stop       ; sa          ;    ; 5.391 ; 5.391 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; Clock      ; Clock    ; 28       ; 0        ; 0        ; 40       ;
+; nIOW       ; Clock    ; 0        ; 0        ; 0        ; 5        ;
+; nIOW       ; nIOW     ; 0        ; 0        ; 0        ; 1        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; Clock      ; Clock    ; 28       ; 0        ; 0        ; 40       ;
+; nIOW       ; Clock    ; 0        ; 0        ; 0        ; 5        ;
+; nIOW       ; nIOW     ; 0        ; 0        ; 0        ; 1        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; nIOW       ; nIOR     ; 0        ; 0        ; 1        ; 1        ;
+; Clock      ; nIOW     ; 0        ; 0        ; 7        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; nIOW       ; nIOR     ; 0        ; 0        ; 1        ; 1        ;
+; Clock      ; nIOW     ; 0        ; 0        ; 7        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 11    ; 11   ;
+; Unconstrained Input Port Paths  ; 19    ; 19   ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 47    ; 47   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri May 30 16:58:01 2025
+Info: Command: quartus_sta interface -c interface
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'interface.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name Clock Clock
+    Info (332105): create_clock -period 1.000 -name nIOW nIOW
+    Info (332105): create_clock -period 1.000 -name nIOR nIOR
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.089
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.089       -18.513 Clock 
+    Info (332119):     0.235         0.000 nIOW 
+Info (332146): Worst-case hold slack is 0.499
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.499         0.000 nIOW 
+    Info (332119):     0.770         0.000 Clock 
+Info (332146): Worst-case recovery slack is -5.167
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.167        -5.167 nIOW 
+    Info (332119):     0.136         0.000 nIOR 
+Info (332146): Worst-case removal slack is 0.098
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.098         0.000 nIOR 
+    Info (332119):     5.107         0.000 nIOW 
+Info (332146): Worst-case minimum pulse width slack is -1.941
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.941        -4.909 nIOW 
+    Info (332119):    -1.777       -19.585 Clock 
+    Info (332119):    -1.777        -3.261 nIOR 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.076
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.076        -0.380 Clock 
+    Info (332119):     0.665         0.000 nIOW 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 nIOW 
+    Info (332119):     0.251         0.000 Clock 
+Info (332146): Worst-case recovery slack is -1.758
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.758        -1.758 nIOW 
+    Info (332119):     0.416         0.000 nIOR 
+Info (332146): Worst-case removal slack is -0.036
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.036        -0.036 nIOR 
+    Info (332119):     2.393         0.000 nIOW 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -3.380 nIOW 
+    Info (332119):    -1.222       -13.222 Clock 
+    Info (332119):    -1.222        -2.222 nIOR 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4530 megabytes
+    Info: Processing ended: Fri May 30 16:58:02 2025
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

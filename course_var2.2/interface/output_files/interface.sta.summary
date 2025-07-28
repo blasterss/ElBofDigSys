@@ -1,0 +1,93 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'Clock'
+Slack : -2.089
+TNS   : -18.513
+
+Type  : Slow Model Setup 'nIOW'
+Slack : 0.235
+TNS   : 0.000
+
+Type  : Slow Model Hold 'nIOW'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Hold 'Clock'
+Slack : 0.770
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'nIOW'
+Slack : -5.167
+TNS   : -5.167
+
+Type  : Slow Model Recovery 'nIOR'
+Slack : 0.136
+TNS   : 0.000
+
+Type  : Slow Model Removal 'nIOR'
+Slack : 0.098
+TNS   : 0.000
+
+Type  : Slow Model Removal 'nIOW'
+Slack : 5.107
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'nIOW'
+Slack : -1.941
+TNS   : -4.909
+
+Type  : Slow Model Minimum Pulse Width 'Clock'
+Slack : -1.777
+TNS   : -19.585
+
+Type  : Slow Model Minimum Pulse Width 'nIOR'
+Slack : -1.777
+TNS   : -3.261
+
+Type  : Fast Model Setup 'Clock'
+Slack : -0.076
+TNS   : -0.380
+
+Type  : Fast Model Setup 'nIOW'
+Slack : 0.665
+TNS   : 0.000
+
+Type  : Fast Model Hold 'nIOW'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'Clock'
+Slack : 0.251
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'nIOW'
+Slack : -1.758
+TNS   : -1.758
+
+Type  : Fast Model Recovery 'nIOR'
+Slack : 0.416
+TNS   : 0.000
+
+Type  : Fast Model Removal 'nIOR'
+Slack : -0.036
+TNS   : -0.036
+
+Type  : Fast Model Removal 'nIOW'
+Slack : 2.393
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'nIOW'
+Slack : -1.380
+TNS   : -3.380
+
+Type  : Fast Model Minimum Pulse Width 'Clock'
+Slack : -1.222
+TNS   : -13.222
+
+Type  : Fast Model Minimum Pulse Width 'nIOR'
+Slack : -1.222
+TNS   : -2.222
+
+------------------------------------------------------------
